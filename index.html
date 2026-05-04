@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,13 +15,15 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="QQ Bot - 群聊小助手">
   <meta name="twitter:description" content="基于 NoneBot2 + OneBot v11 的 QQ 群聊机器人">
+  <link rel="icon" type="image/jpeg" href="static/logo.jpg">
   <link rel="canonical" href="https://github.com/codehyq/qq-bot">
   <title>QQ Bot - 群聊小助手</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
   <script>
     tailwind.config = {
       darkMode: 'class',
@@ -48,26 +51,34 @@
     }
   </script>
   <style>
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+    }
+
     .gradient-bg {
       background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     }
+
     .gradient-text {
       background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
+
     .card-hover {
       transition: all 0.3s ease;
     }
+
     .card-hover:hover {
       transform: translateY(-8px);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
     }
+
     .nav-link {
       position: relative;
     }
+
     .nav-link::after {
       content: '';
       position: absolute;
@@ -78,40 +89,57 @@
       background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       transition: width 0.3s ease;
     }
+
     .nav-link:hover::after {
       width: 100%;
     }
+
     .code-block {
       background: #1e293b;
       border-radius: 0.5rem;
       overflow-x: auto;
     }
+
     .code-block code {
       font-family: 'Fira Code', 'Monaco', 'Consolas', monospace;
     }
+
     .fade-in {
       animation: fadeIn 0.6s ease-out;
     }
+
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
+
     .feature-icon {
       background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
     }
+
     .mobile-menu {
       transform: translateX(-100%);
       transition: transform 0.3s ease;
     }
+
     .mobile-menu.active {
       transform: translateX(0);
     }
+
     .lang-dropdown {
       opacity: 0;
       visibility: hidden;
       transform: translateY(-10px);
       transition: all 0.2s ease;
     }
+
     .lang-dropdown.active {
       opacity: 1;
       visibility: visible;
@@ -119,45 +147,64 @@
     }
   </style>
 </head>
+
 <body class="font-sans bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-100 transition-colors duration-300">
   <nav class="fixed top-0 left-0 right-0 z-50 bg-white/90 dark:bg-gray-800/90 backdrop-blur-md shadow-sm">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center h-16">
         <div class="flex items-center gap-3">
-          <div class="w-10 h-10 gradient-bg rounded-xl flex items-center justify-center">
-            <i class="fab fa-android text-white text-xl"></i>
-          </div>
+          <img src="static/logo.jpg" alt="QQ Bot Logo" class="w-10 h-10 rounded-xl object-cover">
           <span class="text-xl font-bold gradient-text">QQ Bot</span>
         </div>
 
         <div class="hidden md:flex items-center gap-8">
-          <a href="#home" class="nav-link text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium" data-i18n="nav.home">首页</a>
-          <a href="#features" class="nav-link text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium" data-i18n="nav.features">功能</a>
-          <a href="#install" class="nav-link text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium" data-i18n="nav.install">安装</a>
-          <a href="#docs" class="nav-link text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium" data-i18n="nav.docs">文档</a>
-          <a href="#faq" class="nav-link text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium" data-i18n="nav.faq">常见问题</a>
-          <a href="#contact" class="nav-link text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium" data-i18n="nav.contact">联系</a>
+          <a href="#home"
+            class="nav-link text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium"
+            data-i18n="nav.home">首页</a>
+          <a href="#features"
+            class="nav-link text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium"
+            data-i18n="nav.features">功能</a>
+          <a href="#install"
+            class="nav-link text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium"
+            data-i18n="nav.install">安装</a>
+          <a href="#docs"
+            class="nav-link text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium"
+            data-i18n="nav.docs">文档</a>
+          <a href="#faq"
+            class="nav-link text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium"
+            data-i18n="nav.faq">常见问题</a>
+          <a href="#contact"
+            class="nav-link text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium"
+            data-i18n="nav.contact">联系</a>
         </div>
 
         <div class="flex items-center gap-4">
           <div class="relative">
-            <button id="langBtn" class="flex items-center gap-2 px-3 py-2 rounded-lg bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">
+            <button id="langBtn"
+              class="flex items-center gap-2 px-3 py-2 rounded-lg bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">
               <i class="fas fa-globe"></i>
               <span id="currentLang" class="text-sm font-medium">中文</span>
               <i class="fas fa-chevron-down text-xs"></i>
             </button>
-            <div id="langDropdown" class="lang-dropdown absolute right-0 mt-2 w-36 bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 overflow-hidden">
-              <button onclick="setLanguage('zh')" class="w-full px-4 py-2.5 text-left hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors text-sm" data-i18n="lang.zh">中文</button>
-              <button onclick="setLanguage('en')" class="w-full px-4 py-2.5 text-left hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors text-sm" data-i18n="lang.en">English</button>
+            <div id="langDropdown"
+              class="lang-dropdown absolute right-0 mt-2 w-36 bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 overflow-hidden">
+              <button onclick="setLanguage('zh')"
+                class="w-full px-4 py-2.5 text-left hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors text-sm"
+                data-i18n="lang.zh">中文</button>
+              <button onclick="setLanguage('en')"
+                class="w-full px-4 py-2.5 text-left hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors text-sm"
+                data-i18n="lang.en">English</button>
             </div>
           </div>
 
-          <button id="themeBtn" class="p-2 rounded-lg bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">
+          <button id="themeBtn"
+            class="p-2 rounded-lg bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">
             <i class="fas fa-moon dark:hidden"></i>
             <i class="fas fa-sun hidden dark:block"></i>
           </button>
 
-          <a href="https://github.com/codehyq/qq-bot" target="_blank" class="hidden md:flex items-center gap-2 px-4 py-2 bg-gray-900 dark:bg-white text-white dark:text-gray-900 rounded-lg hover:bg-gray-800 dark:hover:bg-gray-100 transition-colors font-medium text-sm">
+          <a href="https://github.com/codehyq/qq-bot" target="_blank"
+            class="hidden md:flex items-center gap-2 px-4 py-2 bg-gray-900 dark:bg-white text-white dark:text-gray-900 rounded-lg hover:bg-gray-800 dark:hover:bg-gray-100 transition-colors font-medium text-sm">
             <i class="fab fa-github"></i>
             <span>GitHub</span>
           </a>
@@ -169,15 +216,29 @@
       </div>
     </div>
 
-    <div id="mobileMenu" class="mobile-menu fixed top-16 left-0 right-0 bottom-0 bg-white dark:bg-gray-800 md:hidden z-40">
+    <div id="mobileMenu"
+      class="mobile-menu fixed top-16 left-0 right-0 bottom-0 bg-white dark:bg-gray-800 md:hidden z-40">
       <div class="flex flex-col p-4 gap-2">
-        <a href="#home" class="px-4 py-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors font-medium" data-i18n="nav.home">首页</a>
-        <a href="#features" class="px-4 py-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors font-medium" data-i18n="nav.features">功能</a>
-        <a href="#install" class="px-4 py-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors font-medium" data-i18n="nav.install">安装</a>
-        <a href="#docs" class="px-4 py-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors font-medium" data-i18n="nav.docs">文档</a>
-        <a href="#faq" class="px-4 py-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors font-medium" data-i18n="nav.faq">常见问题</a>
-        <a href="#contact" class="px-4 py-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors font-medium" data-i18n="nav.contact">联系</a>
-        <a href="https://github.com/codehyq/qq-bot" target="_blank" class="flex items-center gap-2 px-4 py-3 mt-2 bg-gray-900 dark:bg-white text-white dark:text-gray-900 rounded-lg font-medium">
+        <a href="#home"
+          class="px-4 py-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors font-medium"
+          data-i18n="nav.home">首页</a>
+        <a href="#features"
+          class="px-4 py-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors font-medium"
+          data-i18n="nav.features">功能</a>
+        <a href="#install"
+          class="px-4 py-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors font-medium"
+          data-i18n="nav.install">安装</a>
+        <a href="#docs"
+          class="px-4 py-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors font-medium"
+          data-i18n="nav.docs">文档</a>
+        <a href="#faq"
+          class="px-4 py-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors font-medium"
+          data-i18n="nav.faq">常见问题</a>
+        <a href="#contact"
+          class="px-4 py-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors font-medium"
+          data-i18n="nav.contact">联系</a>
+        <a href="https://github.com/codehyq/qq-bot" target="_blank"
+          class="flex items-center gap-2 px-4 py-3 mt-2 bg-gray-900 dark:bg-white text-white dark:text-gray-900 rounded-lg font-medium">
           <i class="fab fa-github"></i>
           <span>GitHub</span>
         </a>
@@ -196,11 +257,13 @@
             基于 NoneBot2 + OneBot v11 的智能机器人，支持音乐点歌、成语接龙、天气查询等多种功能
           </p>
           <div class="flex flex-wrap gap-4">
-            <a href="#install" class="inline-flex items-center gap-2 px-8 py-4 bg-white text-primary-600 rounded-xl font-semibold hover:bg-gray-100 transition-colors shadow-lg">
+            <a href="#install"
+              class="inline-flex items-center gap-2 px-8 py-4 bg-white text-primary-600 rounded-xl font-semibold hover:bg-gray-100 transition-colors shadow-lg">
               <i class="fas fa-rocket"></i>
               <span data-i18n="hero.getStarted">快速开始</span>
             </a>
-            <a href="https://github.com/codehyq/qq-bot" target="_blank" class="inline-flex items-center gap-2 px-8 py-4 bg-white/20 text-white rounded-xl font-semibold hover:bg-white/30 transition-colors border border-white/30">
+            <a href="https://github.com/codehyq/qq-bot" target="_blank"
+              class="inline-flex items-center gap-2 px-8 py-4 bg-white/20 text-white rounded-xl font-semibold hover:bg-white/30 transition-colors border border-white/30">
               <i class="fab fa-github"></i>
               <span data-i18n="hero.viewSource">查看源码</span>
             </a>
@@ -231,7 +294,8 @@
                 <div class="text-white/50">✔ qq-bot-musicapi-1</div>
                 <div class="text-white/50">✔ qq-bot-qqmusicapi-1</div>
                 <div class="text-white/50">✔ qq-bot-nonebot-1</div>
-                <div class="mt-4"><span class="text-green-400">$</span> <span class="text-yellow-400">@机器人</span> 帮助</div>
+                <div class="mt-4"><span class="text-green-400">$</span> <span class="text-yellow-400">@机器人</span> 帮助
+                </div>
                 <div class="text-primary-300">📋 功能菜单已生成...</div>
               </div>
             </div>
@@ -245,7 +309,8 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16">
         <h2 class="text-3xl sm:text-4xl font-bold mb-4" data-i18n="features.title">功能特性</h2>
-        <p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto" data-i18n="features.subtitle">丰富的群聊功能，让你的群更加活跃有趣</p>
+        <p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto" data-i18n="features.subtitle">
+          丰富的群聊功能，让你的群更加活跃有趣</p>
       </div>
 
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -304,7 +369,8 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16">
         <h2 class="text-3xl sm:text-4xl font-bold mb-4" data-i18n="commands.title">命令一览</h2>
-        <p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto" data-i18n="commands.subtitle">所有命令需要 @机器人 才能触发</p>
+        <p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto" data-i18n="commands.subtitle">所有命令需要 @机器人
+          才能触发</p>
       </div>
 
       <div class="grid lg:grid-cols-3 gap-8">
@@ -404,14 +470,17 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16">
         <h2 class="text-3xl sm:text-4xl font-bold mb-4" data-i18n="install.title">安装指南</h2>
-        <p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto" data-i18n="install.subtitle">快速部署到你的服务器或本地环境</p>
+        <p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto" data-i18n="install.subtitle">
+          快速部署到你的服务器或本地环境</p>
       </div>
 
       <div class="grid lg:grid-cols-2 gap-12 items-start">
         <div>
           <div class="space-y-8">
             <div class="flex gap-4">
-              <div class="flex-shrink-0 w-10 h-10 rounded-full gradient-bg flex items-center justify-center text-white font-bold">1</div>
+              <div
+                class="flex-shrink-0 w-10 h-10 rounded-full gradient-bg flex items-center justify-center text-white font-bold">
+                1</div>
               <div>
                 <h3 class="text-xl font-bold mb-2" data-i18n="install.step1.title">克隆项目</h3>
                 <p class="text-gray-600 dark:text-gray-400 mb-3" data-i18n="install.step1.desc">从 GitHub 克隆最新代码</p>
@@ -423,7 +492,9 @@ cd qq-bot</code>
             </div>
 
             <div class="flex gap-4">
-              <div class="flex-shrink-0 w-10 h-10 rounded-full gradient-bg flex items-center justify-center text-white font-bold">2</div>
+              <div
+                class="flex-shrink-0 w-10 h-10 rounded-full gradient-bg flex items-center justify-center text-white font-bold">
+                2</div>
               <div>
                 <h3 class="text-xl font-bold mb-2" data-i18n="install.step2.title">配置环境</h3>
                 <p class="text-gray-600 dark:text-gray-400 mb-3" data-i18n="install.step2.desc">配置网易云 Cookie（可选但推荐）</p>
@@ -435,10 +506,13 @@ echo "NETEASE_COOKIE=你的cookie" > .env</code>
             </div>
 
             <div class="flex gap-4">
-              <div class="flex-shrink-0 w-10 h-10 rounded-full gradient-bg flex items-center justify-center text-white font-bold">3</div>
+              <div
+                class="flex-shrink-0 w-10 h-10 rounded-full gradient-bg flex items-center justify-center text-white font-bold">
+                3</div>
               <div>
                 <h3 class="text-xl font-bold mb-2" data-i18n="install.step3.title">启动服务</h3>
-                <p class="text-gray-600 dark:text-gray-400 mb-3" data-i18n="install.step3.desc">使用 Docker Compose 启动所有服务</p>
+                <p class="text-gray-600 dark:text-gray-400 mb-3" data-i18n="install.step3.desc">使用 Docker Compose 启动所有服务
+                </p>
                 <div class="code-block p-4">
                   <code class="text-sm text-gray-300">docker compose up -d</code>
                 </div>
@@ -446,12 +520,15 @@ echo "NETEASE_COOKIE=你的cookie" > .env</code>
             </div>
 
             <div class="flex gap-4">
-              <div class="flex-shrink-0 w-10 h-10 rounded-full gradient-bg flex items-center justify-center text-white font-bold">4</div>
+              <div
+                class="flex-shrink-0 w-10 h-10 rounded-full gradient-bg flex items-center justify-center text-white font-bold">
+                4</div>
               <div>
                 <h3 class="text-xl font-bold mb-2" data-i18n="install.step4.title">配置 LLBot</h3>
                 <p class="text-gray-600 dark:text-gray-400 mb-3" data-i18n="install.step4.desc">配置反向 WebSocket 连接</p>
                 <div class="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-4 text-sm">
-                  <p class="text-blue-800 dark:text-blue-300"><strong>WebSocket 地址:</strong> ws://localhost:8080/onebot/v11/ws</p>
+                  <p class="text-blue-800 dark:text-blue-300"><strong>WebSocket 地址:</strong>
+                    ws://localhost:8080/onebot/v11/ws</p>
                   <p class="text-blue-800 dark:text-blue-300 mt-1"><strong>AccessToken:</strong> （留空）</p>
                 </div>
               </div>
@@ -464,7 +541,8 @@ echo "NETEASE_COOKIE=你的cookie" > .env</code>
             <h3 class="text-xl font-bold mb-6" data-i18n="install.requirements.title">环境要求</h3>
             <div class="space-y-4">
               <div class="flex items-start gap-4">
-                <div class="w-10 h-10 rounded-lg bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center flex-shrink-0">
+                <div
+                  class="w-10 h-10 rounded-lg bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center flex-shrink-0">
                   <i class="fab fa-docker text-blue-600 dark:text-blue-400"></i>
                 </div>
                 <div>
@@ -473,7 +551,8 @@ echo "NETEASE_COOKIE=你的cookie" > .env</code>
                 </div>
               </div>
               <div class="flex items-start gap-4">
-                <div class="w-10 h-10 rounded-lg bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center flex-shrink-0">
+                <div
+                  class="w-10 h-10 rounded-lg bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center flex-shrink-0">
                   <i class="fab fa-windows text-purple-600 dark:text-purple-400"></i>
                 </div>
                 <div>
@@ -482,7 +561,8 @@ echo "NETEASE_COOKIE=你的cookie" > .env</code>
                 </div>
               </div>
               <div class="flex items-start gap-4">
-                <div class="w-10 h-10 rounded-lg bg-green-100 dark:bg-green-900/30 flex items-center justify-center flex-shrink-0">
+                <div
+                  class="w-10 h-10 rounded-lg bg-green-100 dark:bg-green-900/30 flex items-center justify-center flex-shrink-0">
                   <i class="fas fa-user text-green-600 dark:text-green-400"></i>
                 </div>
                 <div>
@@ -519,7 +599,8 @@ echo "NETEASE_COOKIE=你的cookie" > .env</code>
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16">
         <h2 class="text-3xl sm:text-4xl font-bold mb-4" data-i18n="docs.title">使用文档</h2>
-        <p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto" data-i18n="docs.subtitle">了解更多技术细节和开发指南</p>
+        <p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto" data-i18n="docs.subtitle">了解更多技术细节和开发指南
+        </p>
       </div>
 
       <div class="grid lg:grid-cols-2 gap-8">
@@ -556,19 +637,25 @@ echo "NETEASE_COOKIE=你的cookie" > .env</code>
           <p class="text-gray-600 dark:text-gray-400 mb-6" data-i18n="docs.plugin.desc">添加新功能只需简单几步</p>
           <div class="space-y-4">
             <div class="flex items-start gap-3">
-              <span class="flex-shrink-0 w-6 h-6 rounded-full bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 flex items-center justify-center text-sm font-bold">1</span>
+              <span
+                class="flex-shrink-0 w-6 h-6 rounded-full bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 flex items-center justify-center text-sm font-bold">1</span>
               <code class="text-sm bg-gray-100 dark:bg-gray-700 px-3 py-2 rounded-lg">在 bot/plugins/ 下新建 .py 文件</code>
             </div>
             <div class="flex items-start gap-3">
-              <span class="flex-shrink-0 w-6 h-6 rounded-full bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 flex items-center justify-center text-sm font-bold">2</span>
-              <code class="text-sm bg-gray-100 dark:bg-gray-700 px-3 py-2 rounded-lg">导入 help_registry 并调用 register()</code>
+              <span
+                class="flex-shrink-0 w-6 h-6 rounded-full bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 flex items-center justify-center text-sm font-bold">2</span>
+              <code
+                class="text-sm bg-gray-100 dark:bg-gray-700 px-3 py-2 rounded-lg">导入 help_registry 并调用 register()</code>
             </div>
             <div class="flex items-start gap-3">
-              <span class="flex-shrink-0 w-6 h-6 rounded-full bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 flex items-center justify-center text-sm font-bold">3</span>
-              <code class="text-sm bg-gray-100 dark:bg-gray-700 px-3 py-2 rounded-lg">使用 on_command() 或 on_message() 注册处理器</code>
+              <span
+                class="flex-shrink-0 w-6 h-6 rounded-full bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 flex items-center justify-center text-sm font-bold">3</span>
+              <code
+                class="text-sm bg-gray-100 dark:bg-gray-700 px-3 py-2 rounded-lg">使用 on_command() 或 on_message() 注册处理器</code>
             </div>
             <div class="flex items-start gap-3">
-              <span class="flex-shrink-0 w-6 h-6 rounded-full bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 flex items-center justify-center text-sm font-bold">4</span>
+              <span
+                class="flex-shrink-0 w-6 h-6 rounded-full bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 flex items-center justify-center text-sm font-bold">4</span>
               <code class="text-sm bg-gray-100 dark:bg-gray-700 px-3 py-2 rounded-lg">NoneBot 自动加载，无需修改 bot.py</code>
             </div>
           </div>
@@ -583,14 +670,16 @@ echo "NETEASE_COOKIE=你的cookie" > .env</code>
             <div class="bg-gray-50 dark:bg-gray-900 rounded-lg p-4">
               <div class="flex items-center justify-between mb-2">
                 <code class="text-sm font-mono text-primary-600 dark:text-primary-400">GET /search?keywords=xxx</code>
-                <span class="text-xs bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 px-2 py-0.5 rounded">musicapi</span>
+                <span
+                  class="text-xs bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 px-2 py-0.5 rounded">musicapi</span>
               </div>
               <p class="text-sm text-gray-500" data-i18n="docs.api.search">网易云音乐搜索</p>
             </div>
             <div class="bg-gray-50 dark:bg-gray-900 rounded-lg p-4">
               <div class="flex items-center justify-between mb-2">
                 <code class="text-sm font-mono text-primary-600 dark:text-primary-400">WS /onebot/v11/ws</code>
-                <span class="text-xs bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 px-2 py-0.5 rounded">nonebot</span>
+                <span
+                  class="text-xs bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 px-2 py-0.5 rounded">nonebot</span>
               </div>
               <p class="text-sm text-gray-500" data-i18n="docs.api.ws">OneBot v11 反向 WebSocket</p>
             </div>
@@ -602,17 +691,21 @@ echo "NETEASE_COOKIE=你的cookie" > .env</code>
             <i class="fas fa-code-branch text-primary-500"></i>
             <span data-i18n="docs.contribute.title">贡献指南</span>
           </h3>
-          <p class="text-gray-600 dark:text-gray-400 mb-6" data-i18n="docs.contribute.desc">欢迎提交 Issue 和 Pull Request</p>
+          <p class="text-gray-600 dark:text-gray-400 mb-6" data-i18n="docs.contribute.desc">欢迎提交 Issue 和 Pull Request
+          </p>
           <div class="space-y-3">
-            <a href="https://github.com/codehyq/qq-bot/issues" target="_blank" class="flex items-center gap-3 text-primary-600 dark:text-primary-400 hover:underline">
+            <a href="https://github.com/codehyq/qq-bot/issues" target="_blank"
+              class="flex items-center gap-3 text-primary-600 dark:text-primary-400 hover:underline">
               <i class="fas fa-bug"></i>
               <span data-i18n="docs.contribute.issues">提交 Bug 或功能建议</span>
             </a>
-            <a href="https://github.com/codehyq/qq-bot/pulls" target="_blank" class="flex items-center gap-3 text-primary-600 dark:text-primary-400 hover:underline">
+            <a href="https://github.com/codehyq/qq-bot/pulls" target="_blank"
+              class="flex items-center gap-3 text-primary-600 dark:text-primary-400 hover:underline">
               <i class="fas fa-code"></i>
               <span data-i18n="docs.contribute.pr">提交代码改进</span>
             </a>
-            <a href="https://github.com/codehyq/qq-bot" target="_blank" class="flex items-center gap-3 text-primary-600 dark:text-primary-400 hover:underline">
+            <a href="https://github.com/codehyq/qq-bot" target="_blank"
+              class="flex items-center gap-3 text-primary-600 dark:text-primary-400 hover:underline">
               <i class="fas fa-star"></i>
               <span data-i18n="docs.contribute.star">给项目点个 Star</span>
             </a>
@@ -630,18 +723,23 @@ echo "NETEASE_COOKIE=你的cookie" > .env</code>
       </div>
 
       <div class="space-y-4" id="faqContainer">
-        <div class="faq-item bg-gray-50 dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-700 overflow-hidden">
-          <button class="faq-btn w-full px-6 py-4 text-left flex items-center justify-between gap-4" onclick="toggleFaq(this)">
+        <div
+          class="faq-item bg-gray-50 dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-700 overflow-hidden">
+          <button class="faq-btn w-full px-6 py-4 text-left flex items-center justify-between gap-4"
+            onclick="toggleFaq(this)">
             <span class="font-semibold" data-i18n="faq.q1.title">WebSocket 连不上怎么办？</span>
             <i class="fas fa-chevron-down transition-transform"></i>
           </button>
           <div class="faq-content hidden px-6 pb-4 text-gray-600 dark:text-gray-400" data-i18n="faq.q1.answer">
-            确认 Docker 后端已启动，运行 docker ps 查看 qq-bot-nonebot-1 是否为 Up 状态。检查 LLBot 的反向 WebSocket 配置是否正确，地址应为 ws://localhost:8080/onebot/v11/ws。
+            确认 Docker 后端已启动，运行 docker ps 查看 qq-bot-nonebot-1 是否为 Up 状态。检查 LLBot 的反向 WebSocket 配置是否正确，地址应为
+            ws://localhost:8080/onebot/v11/ws。
           </div>
         </div>
 
-        <div class="faq-item bg-gray-50 dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-700 overflow-hidden">
-          <button class="faq-btn w-full px-6 py-4 text-left flex items-center justify-between gap-4" onclick="toggleFaq(this)">
+        <div
+          class="faq-item bg-gray-50 dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-700 overflow-hidden">
+          <button class="faq-btn w-full px-6 py-4 text-left flex items-center justify-between gap-4"
+            onclick="toggleFaq(this)">
             <span class="font-semibold" data-i18n="faq.q2.title">音乐卡片无法点击播放？</span>
             <i class="fas fa-chevron-down transition-transform"></i>
           </button>
@@ -650,8 +748,10 @@ echo "NETEASE_COOKIE=你的cookie" > .env</code>
           </div>
         </div>
 
-        <div class="faq-item bg-gray-50 dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-700 overflow-hidden">
-          <button class="faq-btn w-full px-6 py-4 text-left flex items-center justify-between gap-4" onclick="toggleFaq(this)">
+        <div
+          class="faq-item bg-gray-50 dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-700 overflow-hidden">
+          <button class="faq-btn w-full px-6 py-4 text-left flex items-center justify-between gap-4"
+            onclick="toggleFaq(this)">
             <span class="font-semibold" data-i18n="faq.q3.title">搜索结果不准确？</span>
             <i class="fas fa-chevron-down transition-transform"></i>
           </button>
@@ -660,8 +760,10 @@ echo "NETEASE_COOKIE=你的cookie" > .env</code>
           </div>
         </div>
 
-        <div class="faq-item bg-gray-50 dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-700 overflow-hidden">
-          <button class="faq-btn w-full px-6 py-4 text-left flex items-center justify-between gap-4" onclick="toggleFaq(this)">
+        <div
+          class="faq-item bg-gray-50 dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-700 overflow-hidden">
+          <button class="faq-btn w-full px-6 py-4 text-left flex items-center justify-between gap-4"
+            onclick="toggleFaq(this)">
             <span class="font-semibold" data-i18n="faq.q4.title">QQ 被挤下线正常吗？</span>
             <i class="fas fa-chevron-down transition-transform"></i>
           </button>
@@ -670,13 +772,16 @@ echo "NETEASE_COOKIE=你的cookie" > .env</code>
           </div>
         </div>
 
-        <div class="faq-item bg-gray-50 dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-700 overflow-hidden">
-          <button class="faq-btn w-full px-6 py-4 text-left flex items-center justify-between gap-4" onclick="toggleFaq(this)">
+        <div
+          class="faq-item bg-gray-50 dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-700 overflow-hidden">
+          <button class="faq-btn w-full px-6 py-4 text-left flex items-center justify-between gap-4"
+            onclick="toggleFaq(this)">
             <span class="font-semibold" data-i18n="faq.q5.title">如何添加新插件？</span>
             <i class="fas fa-chevron-down transition-transform"></i>
           </button>
           <div class="faq-content hidden px-6 pb-4 text-gray-600 dark:text-gray-400" data-i18n="faq.q5.answer">
-            在 bot/plugins/ 目录下创建新的 .py 文件，导入 help_registry 并调用 register() 注册帮助信息，使用 on_command() 或 on_message() 注册命令处理器。NoneBot 会自动加载，无需修改 bot.py。改代码后执行 docker compose restart nonebot 即可生效。
+            在 bot/plugins/ 目录下创建新的 .py 文件，导入 help_registry 并调用 register() 注册帮助信息，使用 on_command() 或 on_message()
+            注册命令处理器。NoneBot 会自动加载，无需修改 bot.py。改代码后执行 docker compose restart nonebot 即可生效。
           </div>
         </div>
       </div>
@@ -689,12 +794,14 @@ echo "NETEASE_COOKIE=你的cookie" > .env</code>
       <p class="text-xl text-white/90 mb-12" data-i18n="contact.subtitle">有问题或建议？联系我们吧！</p>
 
       <div class="grid sm:grid-cols-2 gap-8 mb-12">
-        <a href="https://github.com/codehyq/qq-bot" target="_blank" class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20 hover:bg-white/20 transition-colors">
+        <a href="https://github.com/codehyq/qq-bot" target="_blank"
+          class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20 hover:bg-white/20 transition-colors">
           <i class="fab fa-github text-5xl mb-4"></i>
           <h3 class="text-xl font-bold mb-2">GitHub</h3>
           <p class="text-white/80">codehyq/qq-bot</p>
         </a>
-        <a href="https://github.com/codehyq/qq-bot/issues" target="_blank" class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20 hover:bg-white/20 transition-colors">
+        <a href="https://github.com/codehyq/qq-bot/issues" target="_blank"
+          class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20 hover:bg-white/20 transition-colors">
           <i class="fas fa-bug text-5xl mb-4"></i>
           <h3 class="text-xl font-bold mb-2" data-i18n="contact.issues">Issue Tracker</h3>
           <p class="text-white/80" data-i18n="contact.issuesDesc">报告问题和建议</p>
@@ -702,11 +809,13 @@ echo "NETEASE_COOKIE=你的cookie" > .env</code>
       </div>
 
       <div class="flex flex-wrap justify-center gap-4">
-        <a href="https://github.com/codehyq/qq-bot" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 bg-white text-primary-600 rounded-xl font-semibold hover:bg-gray-100 transition-colors">
+        <a href="https://github.com/codehyq/qq-bot" target="_blank"
+          class="inline-flex items-center gap-2 px-6 py-3 bg-white text-primary-600 rounded-xl font-semibold hover:bg-gray-100 transition-colors">
           <i class="fab fa-github"></i>
           <span data-i18n="contact.star">Star</span>
         </a>
-        <a href="https://github.com/codehyq/qq-bot/fork" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 bg-white/20 text-white rounded-xl font-semibold hover:bg-white/30 transition-colors border border-white/30">
+        <a href="https://github.com/codehyq/qq-bot/fork" target="_blank"
+          class="inline-flex items-center gap-2 px-6 py-3 bg-white/20 text-white rounded-xl font-semibold hover:bg-white/30 transition-colors border border-white/30">
           <i class="fas fa-code-branch"></i>
           <span data-i18n="contact.fork">Fork</span>
         </a>
@@ -719,9 +828,7 @@ echo "NETEASE_COOKIE=你的cookie" > .env</code>
       <div class="grid md:grid-cols-4 gap-8 mb-8">
         <div class="md:col-span-2">
           <div class="flex items-center gap-3 mb-4">
-            <div class="w-10 h-10 gradient-bg rounded-xl flex items-center justify-center">
-              <i class="fab fa-android text-white text-xl"></i>
-            </div>
+            <img src="static/logo.jpg" alt="QQ Bot Logo" class="w-10 h-10 rounded-xl object-cover">
             <span class="text-xl font-bold text-white">QQ Bot</span>
           </div>
           <p class="text-sm max-w-md" data-i18n="footer.description">
@@ -731,17 +838,23 @@ echo "NETEASE_COOKIE=你的cookie" > .env</code>
         <div>
           <h4 class="font-semibold text-white mb-4" data-i18n="footer.links">链接</h4>
           <ul class="space-y-2 text-sm">
-            <li><a href="https://github.com/codehyq/qq-bot" target="_blank" class="hover:text-white transition-colors">GitHub</a></li>
-            <li><a href="https://github.com/codehyq/qq-bot/releases" target="_blank" class="hover:text-white transition-colors" data-i18n="footer.releases">Releases</a></li>
-            <li><a href="https://github.com/codehyq/qq-bot/wiki" target="_blank" class="hover:text-white transition-colors">Wiki</a></li>
+            <li><a href="https://github.com/codehyq/qq-bot" target="_blank"
+                class="hover:text-white transition-colors">GitHub</a></li>
+            <li><a href="https://github.com/codehyq/qq-bot/releases" target="_blank"
+                class="hover:text-white transition-colors" data-i18n="footer.releases">Releases</a></li>
+            <li><a href="https://github.com/codehyq/qq-bot/wiki" target="_blank"
+                class="hover:text-white transition-colors">Wiki</a></li>
           </ul>
         </div>
         <div>
           <h4 class="font-semibold text-white mb-4" data-i18n="footer.resources">资源</h4>
           <ul class="space-y-2 text-sm">
-            <li><a href="https://nonebot.dev" target="_blank" class="hover:text-white transition-colors">NoneBot2</a></li>
-            <li><a href="https://github.com/LLOneBot/LuckyLilliaBot" target="_blank" class="hover:text-white transition-colors">LLBot Desktop</a></li>
-            <li><a href="https://onebot.dev" target="_blank" class="hover:text-white transition-colors">OneBot v11</a></li>
+            <li><a href="https://nonebot.dev" target="_blank" class="hover:text-white transition-colors">NoneBot2</a>
+            </li>
+            <li><a href="https://github.com/LLOneBot/LuckyLilliaBot" target="_blank"
+                class="hover:text-white transition-colors">LLBot Desktop</a></li>
+            <li><a href="https://onebot.dev" target="_blank" class="hover:text-white transition-colors">OneBot v11</a>
+            </li>
           </ul>
         </div>
       </div>
@@ -752,7 +865,8 @@ echo "NETEASE_COOKIE=你的cookie" > .env</code>
     </div>
   </footer>
 
-  <div id="backToTop" class="fixed bottom-6 right-6 w-12 h-12 gradient-bg rounded-full flex items-center justify-center text-white shadow-lg opacity-0 invisible transition-all duration-300 hover:scale-110 cursor-pointer z-50">
+  <div id="backToTop"
+    class="fixed bottom-6 right-6 w-12 h-12 gradient-bg rounded-full flex items-center justify-center text-white shadow-lg opacity-0 invisible transition-all duration-300 hover:scale-110 cursor-pointer z-50">
     <i class="fas fa-arrow-up"></i>
   </div>
 
@@ -1048,4 +1162,5 @@ echo "NETEASE_COOKIE=你的cookie" > .env</code>
     setLanguage(currentLang);
   </script>
 </body>
+
 </html>
