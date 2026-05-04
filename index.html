@@ -4,12 +4,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="QQ Bot - 基于 NoneBot2 + OneBot v11 的 QQ 群聊机器人，支持音乐点歌、成语接龙、天气查询等多种功能">
+  <meta name="description"
+    content="QQ Bot - 基于 NoneBot2 + OneBot v11 的 QQ 群聊机器人，支持网易云/QQ 音乐点歌、歌词查询、猜歌游戏、成语接龙、天气查询等多种功能">
   <meta name="keywords" content="QQ Bot, NoneBot2, OneBot, QQ机器人, 群聊机器人, 点歌机器人">
   <meta name="author" content="codehyq">
   <meta name="robots" content="index, follow">
   <meta property="og:title" content="QQ Bot - 群聊小助手">
-  <meta property="og:description" content="基于 NoneBot2 + OneBot v11 的 QQ 群聊机器人，支持音乐点歌、成语接龙、天气查询等多种功能">
+  <meta property="og:description" content="基于 NoneBot2 + OneBot v11 的 QQ 群聊机器人，支持网易云/QQ 音乐点歌、歌词查询、猜歌游戏、成语接龙、天气查询等多种功能">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://github.com/codehyq/qq-bot">
   <meta name="twitter:card" content="summary_large_image">
@@ -145,6 +146,19 @@
       visibility: visible;
       transform: translateY(0);
     }
+
+    .command-table {
+      border-collapse: separate;
+      border-spacing: 0;
+    }
+
+    .command-table th:first-child {
+      border-radius: 0.5rem 0 0 0;
+    }
+
+    .command-table th:last-child {
+      border-radius: 0 0.5rem 0 0;
+    }
   </style>
 </head>
 
@@ -156,7 +170,6 @@
           <img src="static/logo.jpg" alt="QQ Bot Logo" class="w-10 h-10 rounded-xl object-cover">
           <span class="text-xl font-bold gradient-text">QQ Bot</span>
         </div>
-
         <div class="hidden md:flex items-center gap-8">
           <a href="#home"
             class="nav-link text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium"
@@ -177,7 +190,6 @@
             class="nav-link text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium"
             data-i18n="nav.contact">联系</a>
         </div>
-
         <div class="flex items-center gap-4">
           <div class="relative">
             <button id="langBtn"
@@ -196,26 +208,22 @@
                 data-i18n="lang.en">English</button>
             </div>
           </div>
-
           <button id="themeBtn"
             class="p-2 rounded-lg bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">
             <i class="fas fa-moon dark:hidden"></i>
             <i class="fas fa-sun hidden dark:block"></i>
           </button>
-
           <a href="https://github.com/codehyq/qq-bot" target="_blank"
             class="hidden md:flex items-center gap-2 px-4 py-2 bg-gray-900 dark:bg-white text-white dark:text-gray-900 rounded-lg hover:bg-gray-800 dark:hover:bg-gray-100 transition-colors font-medium text-sm">
             <i class="fab fa-github"></i>
             <span>GitHub</span>
           </a>
-
           <button id="mobileMenuBtn" class="md:hidden p-2 rounded-lg bg-gray-100 dark:bg-gray-700">
             <i class="fas fa-bars"></i>
           </button>
         </div>
       </div>
     </div>
-
     <div id="mobileMenu"
       class="mobile-menu fixed top-16 left-0 right-0 bottom-0 bg-white dark:bg-gray-800 md:hidden z-40">
       <div class="flex flex-col p-4 gap-2">
@@ -254,7 +262,7 @@
             <span data-i18n="hero.title">QQ 群聊小助手</span>
           </h1>
           <p class="text-xl sm:text-2xl text-white/90 mb-8 leading-relaxed" data-i18n="hero.subtitle">
-            基于 NoneBot2 + OneBot v11 的智能机器人，支持音乐点歌、成语接龙、天气查询等多种功能
+            基于 NoneBot2 + OneBot v11 的 QQ 群聊机器人，支持网易云/QQ 音乐点歌、歌词查询、猜歌游戏、成语接龙、天气查询等多种功能。
           </p>
           <div class="flex flex-wrap gap-4">
             <a href="#install"
@@ -274,9 +282,7 @@
               <i class="fab fa-python text-3xl text-white/80"></i>
               <i class="fas fa-music text-3xl text-white/80"></i>
             </div>
-            <div class="text-white/80 text-sm" data-i18n="hero.techStack">
-              Docker · Python · FastAPI
-            </div>
+            <div class="text-white/80 text-sm" data-i18n="hero.techStack">Docker · Python · FastAPI</div>
           </div>
         </div>
         <div class="hidden lg:block">
@@ -289,6 +295,8 @@
                 <div class="w-3 h-3 rounded-full bg-green-400"></div>
               </div>
               <div class="font-mono text-sm space-y-3 text-white/90">
+                <div><span class="text-green-400">$</span> git clone https://github.com/codehyq/qq-bot.git</div>
+                <div><span class="text-green-400">$</span> cd qq-bot</div>
                 <div><span class="text-green-400">$</span> docker compose up -d</div>
                 <div class="text-white/50">[+] Running 3/3</div>
                 <div class="text-white/50">✔ qq-bot-musicapi-1</div>
@@ -312,7 +320,6 @@
         <p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto" data-i18n="features.subtitle">
           丰富的群聊功能，让你的群更加活跃有趣</p>
       </div>
-
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         <div class="card-hover bg-gray-50 dark:bg-gray-900 rounded-2xl p-8 border border-gray-200 dark:border-gray-700">
           <div class="feature-icon w-14 h-14 rounded-xl flex items-center justify-center mb-6">
@@ -321,7 +328,6 @@
           <h3 class="text-xl font-bold mb-3" data-i18n="features.music.title">音乐点歌</h3>
           <p class="text-gray-600 dark:text-gray-400" data-i18n="features.music.desc">支持网易云音乐和 QQ 音乐搜索，发送音乐卡片，点击即可播放</p>
         </div>
-
         <div class="card-hover bg-gray-50 dark:bg-gray-900 rounded-2xl p-8 border border-gray-200 dark:border-gray-700">
           <div class="feature-icon w-14 h-14 rounded-xl flex items-center justify-center mb-6">
             <i class="fas fa-gamepad text-2xl text-primary-500"></i>
@@ -329,7 +335,6 @@
           <h3 class="text-xl font-bold mb-3" data-i18n="features.game.title">互动游戏</h3>
           <p class="text-gray-600 dark:text-gray-400" data-i18n="features.game.desc">成语接龙、猜歌游戏、抽签运势等多种互动游戏，让群聊不再无聊</p>
         </div>
-
         <div class="card-hover bg-gray-50 dark:bg-gray-900 rounded-2xl p-8 border border-gray-200 dark:border-gray-700">
           <div class="feature-icon w-14 h-14 rounded-xl flex items-center justify-center mb-6">
             <i class="fas fa-image text-2xl text-primary-500"></i>
@@ -337,7 +342,6 @@
           <h3 class="text-xl font-bold mb-3" data-i18n="features.image.title">美图分享</h3>
           <p class="text-gray-600 dark:text-gray-400" data-i18n="features.image.desc">随机动漫图片、二次元插画，一键分享到群聊</p>
         </div>
-
         <div class="card-hover bg-gray-50 dark:bg-gray-900 rounded-2xl p-8 border border-gray-200 dark:border-gray-700">
           <div class="feature-icon w-14 h-14 rounded-xl flex items-center justify-center mb-6">
             <i class="fas fa-cloud-sun text-2xl text-primary-500"></i>
@@ -345,7 +349,6 @@
           <h3 class="text-xl font-bold mb-3" data-i18n="features.weather.title">天气查询</h3>
           <p class="text-gray-600 dark:text-gray-400" data-i18n="features.weather.desc">支持全国城市天气查询，提供实时天气和预报信息</p>
         </div>
-
         <div class="card-hover bg-gray-50 dark:bg-gray-900 rounded-2xl p-8 border border-gray-200 dark:border-gray-700">
           <div class="feature-icon w-14 h-14 rounded-xl flex items-center justify-center mb-6">
             <i class="fas fa-language text-2xl text-primary-500"></i>
@@ -353,7 +356,6 @@
           <h3 class="text-xl font-bold mb-3" data-i18n="features.lang.title">每日外语</h3>
           <p class="text-gray-600 dark:text-gray-400" data-i18n="features.lang.desc">每日英语、每日日语，一句话学习地道外语表达</p>
         </div>
-
         <div class="card-hover bg-gray-50 dark:bg-gray-900 rounded-2xl p-8 border border-gray-200 dark:border-gray-700">
           <div class="feature-icon w-14 h-14 rounded-xl flex items-center justify-center mb-6">
             <i class="fas fa-plug text-2xl text-primary-500"></i>
@@ -369,96 +371,107 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16">
         <h2 class="text-3xl sm:text-4xl font-bold mb-4" data-i18n="commands.title">命令一览</h2>
-        <p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto" data-i18n="commands.subtitle">所有命令需要 @机器人
-          才能触发</p>
+        <p class="text-lg text-gray-600 dark:text-gray-400" data-i18n="commands.subtitle">所有命令需要 @机器人 才能触发，避免群聊刷屏</p>
       </div>
 
       <div class="grid lg:grid-cols-3 gap-8">
-        <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 border border-gray-200 dark:border-gray-700">
-          <div class="flex items-center gap-3 mb-6">
+        <div class="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden border border-gray-200 dark:border-gray-700">
+          <div class="flex items-center gap-3 p-6 border-b border-gray-200 dark:border-gray-700">
             <div class="w-10 h-10 rounded-lg bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center">
               <i class="fas fa-music text-primary-600 dark:text-primary-400"></i>
             </div>
             <h3 class="text-lg font-bold" data-i18n="commands.music.title">音乐</h3>
           </div>
-          <div class="space-y-3">
-            <div class="flex justify-between items-center py-2 border-b border-gray-100 dark:border-gray-700">
-              <code class="text-sm bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">@我 点歌 &lt;歌名&gt;</code>
-              <span class="text-sm text-gray-500" data-i18n="commands.music.search">网易云搜索</span>
+          <div class="p-6 space-y-4">
+            <div class="flex justify-between items-center">
+              <code class="text-sm bg-gray-100 dark:bg-gray-700 px-3 py-1.5 rounded">@我 点歌 <歌名></code>
+              <span class="text-sm text-gray-500" data-i18n="commands.music.search">网易云搜索，选序号发卡片</span>
             </div>
-            <div class="flex justify-between items-center py-2 border-b border-gray-100 dark:border-gray-700">
-              <code class="text-sm bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">@我 QQ点歌 &lt;歌名&gt;</code>
-              <span class="text-sm text-gray-500" data-i18n="commands.music.qq">QQ音乐搜索</span>
+            <div class="flex justify-between items-center">
+              <code class="text-sm bg-gray-100 dark:bg-gray-700 px-3 py-1.5 rounded">@我 QQ点歌 <歌名></code>
+              <span class="text-sm text-gray-500" data-i18n="commands.music.qq">QQ音乐搜索，选序号发链接</span>
             </div>
-            <div class="flex justify-between items-center py-2 border-b border-gray-100 dark:border-gray-700">
-              <code class="text-sm bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">@我 歌词</code>
-              <span class="text-sm text-gray-500" data-i18n="commands.music.lyric">查看歌词</span>
+            <div class="flex justify-between items-center">
+              <code class="text-sm bg-gray-100 dark:bg-gray-700 px-3 py-1.5 rounded">@我 歌词</code>
+              <span class="text-sm text-gray-500" data-i18n="commands.music.lyric">查看上一首歌的歌词</span>
             </div>
-            <div class="flex justify-between items-center py-2 border-b border-gray-100 dark:border-gray-700">
-              <code class="text-sm bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">@我 猜歌</code>
-              <span class="text-sm text-gray-500" data-i18n="commands.music.guess">猜歌游戏</span>
+            <div class="flex justify-between items-center">
+              <code class="text-sm bg-gray-100 dark:bg-gray-700 px-3 py-1.5 rounded">@我 每日一歌</code>
+              <span class="text-sm text-gray-500" data-i18n="commands.music.daily">随机推荐热门歌曲</span>
             </div>
-            <div class="flex justify-between items-center py-2">
-              <code class="text-sm bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">@我 点歌排行</code>
-              <span class="text-sm text-gray-500" data-i18n="commands.music.rank">点歌排行</span>
+            <div class="flex justify-between items-center">
+              <code class="text-sm bg-gray-100 dark:bg-gray-700 px-3 py-1.5 rounded">@我 猜歌</code>
+              <span class="text-sm text-gray-500" data-i18n="commands.music.guess">根据歌词猜歌名，60秒限时</span>
+            </div>
+            <div class="flex justify-between items-center">
+              <code class="text-sm bg-gray-100 dark:bg-gray-700 px-3 py-1.5 rounded">@我 点歌排行</code>
+              <span class="text-sm text-gray-500" data-i18n="commands.music.rank">本群点歌次数排行</span>
+            </div>
+            <div class="flex justify-between items-center">
+              <code class="text-sm bg-gray-100 dark:bg-gray-700 px-3 py-1.5 rounded">@我 点歌记录</code>
+              <span class="text-sm text-gray-500" data-i18n="commands.music.record">你的点歌足迹</span>
             </div>
           </div>
         </div>
 
-        <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 border border-gray-200 dark:border-gray-700">
-          <div class="flex items-center gap-3 mb-6">
+        <div class="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden border border-gray-200 dark:border-gray-700">
+          <div class="flex items-center gap-3 p-6 border-b border-gray-200 dark:border-gray-700">
             <div class="w-10 h-10 rounded-lg bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center">
               <i class="fas fa-gamepad text-purple-600 dark:text-purple-400"></i>
             </div>
             <h3 class="text-lg font-bold" data-i18n="commands.game.title">互动</h3>
           </div>
-          <div class="space-y-3">
-            <div class="flex justify-between items-center py-2 border-b border-gray-100 dark:border-gray-700">
-              <code class="text-sm bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">@我 成语接龙</code>
-              <span class="text-sm text-gray-500" data-i18n="commands.game.idiom">成语接龙</span>
+          <div class="p-6 space-y-4">
+            <div class="flex justify-between items-center">
+              <code class="text-sm bg-gray-100 dark:bg-gray-700 px-3 py-1.5 rounded">@我 成语接龙</code>
+              <span class="text-sm text-gray-500" data-i18n="commands.game.idiom">开始成语接龙游戏</span>
             </div>
-            <div class="flex justify-between items-center py-2 border-b border-gray-100 dark:border-gray-700">
-              <code class="text-sm bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">@我 抽签</code>
-              <span class="text-sm text-gray-500" data-i18n="commands.game.fortune">今日运势</span>
+            <div class="flex justify-between items-center">
+              <code class="text-sm bg-gray-100 dark:bg-gray-700 px-3 py-1.5 rounded">@我 抽签</code>
+              <span class="text-sm text-gray-500" data-i18n="commands.game.fortune">今日运势，每天限一次</span>
             </div>
-            <div class="flex justify-between items-center py-2 border-b border-gray-100 dark:border-gray-700">
-              <code class="text-sm bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">@我 选择 A B C</code>
-              <span class="text-sm text-gray-500" data-i18n="commands.game.choose">帮你选择</span>
+            <div class="flex justify-between items-center">
+              <code class="text-sm bg-gray-100 dark:bg-gray-700 px-3 py-1.5 rounded">@我 选择 <A> <B> <C></code>
+              <span class="text-sm text-gray-500" data-i18n="commands.game.choose">随机帮你做选择</span>
             </div>
-            <div class="flex justify-between items-center py-2 border-b border-gray-100 dark:border-gray-700">
-              <code class="text-sm bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">@我 一言</code>
+            <div class="flex justify-between items-center">
+              <code class="text-sm bg-gray-100 dark:bg-gray-700 px-3 py-1.5 rounded">@我 一言</code>
               <span class="text-sm text-gray-500" data-i18n="commands.game.quote">随机语录</span>
             </div>
-            <div class="flex justify-between items-center py-2">
-              <code class="text-sm bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">@我 美图</code>
-              <span class="text-sm text-gray-500" data-i18n="commands.game.image">动漫图片</span>
+            <div class="flex justify-between items-center">
+              <code class="text-sm bg-gray-100 dark:bg-gray-700 px-3 py-1.5 rounded">@我 美图</code>
+              <span class="text-sm text-gray-500" data-i18n="commands.game.image">随机动漫图片</span>
+            </div>
+            <div class="flex justify-between items-center">
+              <code class="text-sm bg-gray-100 dark:bg-gray-700 px-3 py-1.5 rounded">@我 插画</code>
+              <span class="text-sm text-gray-500" data-i18n="commands.game.illust">偏插画风格的动漫图</span>
             </div>
           </div>
         </div>
 
-        <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 border border-gray-200 dark:border-gray-700">
-          <div class="flex items-center gap-3 mb-6">
+        <div class="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden border border-gray-200 dark:border-gray-700">
+          <div class="flex items-center gap-3 p-6 border-b border-gray-200 dark:border-gray-700">
             <div class="w-10 h-10 rounded-lg bg-green-100 dark:bg-green-900/30 flex items-center justify-center">
               <i class="fas fa-tools text-green-600 dark:text-green-400"></i>
             </div>
             <h3 class="text-lg font-bold" data-i18n="commands.tool.title">工具</h3>
           </div>
-          <div class="space-y-3">
-            <div class="flex justify-between items-center py-2 border-b border-gray-100 dark:border-gray-700">
-              <code class="text-sm bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">@我 天气 &lt;城市&gt;</code>
-              <span class="text-sm text-gray-500" data-i18n="commands.tool.weather">天气查询</span>
+          <div class="p-6 space-y-4">
+            <div class="flex justify-between items-center">
+              <code class="text-sm bg-gray-100 dark:bg-gray-700 px-3 py-1.5 rounded">@我 天气 <城市></code>
+              <span class="text-sm text-gray-500" data-i18n="commands.tool.weather">查询城市天气（默认北京）</span>
             </div>
-            <div class="flex justify-between items-center py-2 border-b border-gray-100 dark:border-gray-700">
-              <code class="text-sm bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">@我 每日英语</code>
-              <span class="text-sm text-gray-500" data-i18n="commands.tool.english">每日英语</span>
+            <div class="flex justify-between items-center">
+              <code class="text-sm bg-gray-100 dark:bg-gray-700 px-3 py-1.5 rounded">@我 每日英语</code>
+              <span class="text-sm text-gray-500" data-i18n="commands.tool.english">一句英文 + 中文翻译</span>
             </div>
-            <div class="flex justify-between items-center py-2 border-b border-gray-100 dark:border-gray-700">
-              <code class="text-sm bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">@我 每日日语</code>
-              <span class="text-sm text-gray-500" data-i18n="commands.tool.japanese">每日日语</span>
+            <div class="flex justify-between items-center">
+              <code class="text-sm bg-gray-100 dark:bg-gray-700 px-3 py-1.5 rounded">@我 每日日语</code>
+              <span class="text-sm text-gray-500" data-i18n="commands.tool.japanese">一句日文 + 中文翻译</span>
             </div>
-            <div class="flex justify-between items-center py-2 border-b border-gray-100 dark:border-gray-700">
-              <code class="text-sm bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">@我 帮助</code>
-              <span class="text-sm text-gray-500" data-i18n="commands.tool.help">功能菜单</span>
+            <div class="flex justify-between items-center">
+              <code class="text-sm bg-gray-100 dark:bg-gray-700 px-3 py-1.5 rounded">@我 帮助</code>
+              <span class="text-sm text-gray-500" data-i18n="commands.tool.help">显示完整功能菜单</span>
             </div>
           </div>
         </div>
@@ -470,68 +483,82 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16">
         <h2 class="text-3xl sm:text-4xl font-bold mb-4" data-i18n="install.title">安装指南</h2>
-        <p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto" data-i18n="install.subtitle">
-          快速部署到你的服务器或本地环境</p>
+        <p class="text-lg text-gray-600 dark:text-gray-400" data-i18n="install.subtitle">快速部署到你的服务器或本地环境</p>
       </div>
 
       <div class="grid lg:grid-cols-2 gap-12 items-start">
-        <div>
-          <div class="space-y-8">
-            <div class="flex gap-4">
-              <div
-                class="flex-shrink-0 w-10 h-10 rounded-full gradient-bg flex items-center justify-center text-white font-bold">
-                1</div>
-              <div>
-                <h3 class="text-xl font-bold mb-2" data-i18n="install.step1.title">克隆项目</h3>
-                <p class="text-gray-600 dark:text-gray-400 mb-3" data-i18n="install.step1.desc">从 GitHub 克隆最新代码</p>
-                <div class="code-block p-4">
-                  <code class="text-sm text-gray-300">git clone https://github.com/codehyq/qq-bot.git
-cd qq-bot</code>
-                </div>
+        <div class="space-y-8">
+          <div class="flex gap-4">
+            <div
+              class="flex-shrink-0 w-10 h-10 rounded-full gradient-bg flex items-center justify-center text-white font-bold">
+              1</div>
+            <div>
+              <h3 class="text-xl font-bold mb-2" data-i18n="install.step1.title">克隆项目</h3>
+              <p class="text-gray-600 dark:text-gray-400 mb-3" data-i18n="install.step1.desc">从 GitHub 克隆最新代码到本地</p>
+              <div class="code-block p-4">
+                <code class="text-sm text-gray-300">git clone https://github.com/codehyq/qq-bot.git<br>cd qq-bot</code>
               </div>
             </div>
+          </div>
 
-            <div class="flex gap-4">
-              <div
-                class="flex-shrink-0 w-10 h-10 rounded-full gradient-bg flex items-center justify-center text-white font-bold">
-                2</div>
-              <div>
-                <h3 class="text-xl font-bold mb-2" data-i18n="install.step2.title">配置环境</h3>
-                <p class="text-gray-600 dark:text-gray-400 mb-3" data-i18n="install.step2.desc">配置网易云 Cookie（可选但推荐）</p>
-                <div class="code-block p-4">
-                  <code class="text-sm text-gray-300">cd bot
-echo "NETEASE_COOKIE=你的cookie" > .env</code>
-                </div>
+          <div class="flex gap-4">
+            <div
+              class="flex-shrink-0 w-10 h-10 rounded-full gradient-bg flex items-center justify-center text-white font-bold">
+              2</div>
+            <div>
+              <h3 class="text-xl font-bold mb-2" data-i18n="install.step2.title">配置环境</h3>
+              <p class="text-gray-600 dark:text-gray-400 mb-3" data-i18n="install.step2.desc">配置网易云
+                Cookie（可选，但推荐配置以提升搜索准确度）</p>
+              <div class="code-block p-4">
+                <code class="text-sm text-gray-300">cd bot<br>echo "NETEASE_COOKIE=你的cookie" >> .env</code>
+              </div>
+              <p class="text-sm text-gray-500 mt-2" data-i18n="install.step2.note">从浏览器登录 music.163.com 提取 Cookie</p>
+            </div>
+          </div>
+
+          <div class="flex gap-4">
+            <div
+              class="flex-shrink-0 w-10 h-10 rounded-full gradient-bg flex items-center justify-center text-white font-bold">
+              3</div>
+            <div>
+              <h3 class="text-xl font-bold mb-2" data-i18n="install.step3.title">启动服务</h3>
+              <p class="text-gray-600 dark:text-gray-400 mb-3" data-i18n="install.step3.desc">使用 Docker Compose 启动所有服务
+              </p>
+              <div class="code-block p-4">
+                <code class="text-sm text-gray-300">docker compose up -d</code>
               </div>
             </div>
+          </div>
 
-            <div class="flex gap-4">
-              <div
-                class="flex-shrink-0 w-10 h-10 rounded-full gradient-bg flex items-center justify-center text-white font-bold">
-                3</div>
-              <div>
-                <h3 class="text-xl font-bold mb-2" data-i18n="install.step3.title">启动服务</h3>
-                <p class="text-gray-600 dark:text-gray-400 mb-3" data-i18n="install.step3.desc">使用 Docker Compose 启动所有服务
-                </p>
-                <div class="code-block p-4">
-                  <code class="text-sm text-gray-300">docker compose up -d</code>
-                </div>
+          <div class="flex gap-4">
+            <div
+              class="flex-shrink-0 w-10 h-10 rounded-full gradient-bg flex items-center justify-center text-white font-bold">
+              4</div>
+            <div>
+              <h3 class="text-xl font-bold mb-2" data-i18n="install.step4.title">配置 LLBot Desktop</h3>
+              <p class="text-gray-600 dark:text-gray-400 mb-3" data-i18n="install.step4.desc">下载并配置 QQ 机器人客户端</p>
+              <ol class="list-decimal list-inside space-y-2 text-sm text-gray-600 dark:text-gray-400 mb-4">
+                <li data-i18n="install.step4.step1">下载 <a href="https://github.com/LLOneBot/LuckyLilliaBot/releases"
+                    target="_blank" class="text-primary-600 hover:underline">LLBot Desktop</a>，解压到固定目录</li>
+                <li data-i18n="install.step4.step2">运行 llbot.exe，点击"启动"后用 QQ 小号扫码登录</li>
+                <li data-i18n="install.step4.step3">打开 http://localhost:3080，配置反向 WebSocket</li>
+              </ol>
+              <div class="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-4 text-sm">
+                <p class="text-blue-800 dark:text-blue-300"><strong data-i18n="install.step4.wsAddr">WebSocket
+                    地址:</strong> <code>ws://localhost:8080/onebot/v11/ws</code></p>
+                <p class="text-blue-800 dark:text-blue-300 mt-1"><strong>AccessToken:</strong> <span
+                    data-i18n="install.step4.token">(留空)</span></p>
               </div>
             </div>
+          </div>
 
-            <div class="flex gap-4">
-              <div
-                class="flex-shrink-0 w-10 h-10 rounded-full gradient-bg flex items-center justify-center text-white font-bold">
-                4</div>
-              <div>
-                <h3 class="text-xl font-bold mb-2" data-i18n="install.step4.title">配置 LLBot</h3>
-                <p class="text-gray-600 dark:text-gray-400 mb-3" data-i18n="install.step4.desc">配置反向 WebSocket 连接</p>
-                <div class="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-4 text-sm">
-                  <p class="text-blue-800 dark:text-blue-300"><strong>WebSocket 地址:</strong>
-                    ws://localhost:8080/onebot/v11/ws</p>
-                  <p class="text-blue-800 dark:text-blue-300 mt-1"><strong>AccessToken:</strong> （留空）</p>
-                </div>
-              </div>
+          <div class="flex gap-4">
+            <div
+              class="flex-shrink-0 w-10 h-10 rounded-full gradient-bg flex items-center justify-center text-white font-bold">
+              5</div>
+            <div>
+              <h3 class="text-xl font-bold mb-2" data-i18n="install.step5.title">测试</h3>
+              <p class="text-gray-600 dark:text-gray-400" data-i18n="install.step5.desc">在群里发送 @机器人 帮助 查看所有功能</p>
             </div>
           </div>
         </div>
@@ -575,18 +602,32 @@ echo "NETEASE_COOKIE=你的cookie" > .env</code>
             <div class="mt-8 pt-6 border-t border-gray-200 dark:border-gray-700">
               <h4 class="font-semibold mb-4" data-i18n="install.containers.title">启动的容器</h4>
               <div class="space-y-2 text-sm">
-                <div class="flex justify-between">
+                <div class="flex justify-between items-center">
                   <span class="text-gray-600 dark:text-gray-400">musicapi</span>
                   <code class="bg-gray-200 dark:bg-gray-700 px-2 py-0.5 rounded text-xs">:13000</code>
                 </div>
-                <div class="flex justify-between">
+                <div class="flex justify-between items-center">
                   <span class="text-gray-600 dark:text-gray-400">qqmusicapi</span>
                   <code class="bg-gray-200 dark:bg-gray-700 px-2 py-0.5 rounded text-xs">:13300</code>
                 </div>
-                <div class="flex justify-between">
+                <div class="flex justify-between items-center">
                   <span class="text-gray-600 dark:text-gray-400">nonebot</span>
                   <code class="bg-gray-200 dark:bg-gray-700 px-2 py-0.5 rounded text-xs">:8080</code>
                 </div>
+              </div>
+            </div>
+
+            <div class="mt-8 pt-6 border-t border-gray-200 dark:border-gray-700">
+              <h4 class="font-semibold mb-4" data-i18n="install.commands.title">常用命令</h4>
+              <div class="space-y-2 text-sm">
+                <div class="code-block p-3">
+                  <code class="text-gray-300 text-xs">docker compose logs -f nonebot</code>
+                </div>
+                <p class="text-gray-500 text-xs" data-i18n="install.commands.logs">查看 NoneBot 日志</p>
+                <div class="code-block p-3">
+                  <code class="text-gray-300 text-xs">docker compose up -d --build</code>
+                </div>
+                <p class="text-gray-500 text-xs" data-i18n="install.commands.rebuild">重新构建并启动</p>
               </div>
             </div>
           </div>
@@ -599,8 +640,7 @@ echo "NETEASE_COOKIE=你的cookie" > .env</code>
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16">
         <h2 class="text-3xl sm:text-4xl font-bold mb-4" data-i18n="docs.title">使用文档</h2>
-        <p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto" data-i18n="docs.subtitle">了解更多技术细节和开发指南
-        </p>
+        <p class="text-lg text-gray-600 dark:text-gray-400" data-i18n="docs.subtitle">了解更多技术细节和开发指南</p>
       </div>
 
       <div class="grid lg:grid-cols-2 gap-8">
@@ -609,9 +649,29 @@ echo "NETEASE_COOKIE=你的cookie" > .env</code>
             <i class="fas fa-project-diagram text-primary-500"></i>
             <span data-i18n="docs.architecture.title">架构设计</span>
           </h3>
-          <div class="bg-gray-50 dark:bg-gray-900 rounded-xl p-6 mb-6">
-            <pre class="text-sm text-gray-600 dark:text-gray-400 whitespace-pre-wrap font-mono">LLBot Desktop → 反向 WS → NoneBot → musicapi
-                                            → qqmusicapi</pre>
+          <div class="bg-gray-50 dark:bg-gray-900 rounded-xl p-4 mb-6 overflow-x-auto">
+            <pre class="text-sm text-gray-600 dark:text-gray-400 font-mono whitespace-pre">QQ群消息 → LLBot Desktop (QQ NT 宿主)
+           │ 反向 WebSocket (OneBot v11)
+           ▼
+      NoneBot2 (Python, :8080)
+      ├── at_bot.py       # @机器人拦截器
+      ├── music.py        # 点歌
+      ├── music_extra.py  # 歌词/每日一歌/猜歌
+      ├── idiom_chain.py  # 成语接龙
+      ├── weather.py      # 天气
+      ├── quote.py       # 一言
+      ├── fortune.py      # 抽签
+      ├── choose.py       # 选择困难症
+      ├── daily_lang.py   # 每日英语/日语
+      ├── image.py        # 美图
+      ├── help.py         # 帮助菜单
+      └── db.py          # SQLite 数据库
+           │
+      ┌────┴────┐
+      ▼         ▼
+ musicapi   qqmusicapi
+(Netease)  (QQ Music)
+ :13000     :13300</pre>
           </div>
           <ul class="space-y-3 text-gray-600 dark:text-gray-400">
             <li class="flex items-start gap-2">
@@ -659,29 +719,45 @@ echo "NETEASE_COOKIE=你的cookie" > .env</code>
               <code class="text-sm bg-gray-100 dark:bg-gray-700 px-3 py-2 rounded-lg">NoneBot 自动加载，无需修改 bot.py</code>
             </div>
           </div>
+          <div class="mt-6 p-4 bg-yellow-50 dark:bg-yellow-900/20 rounded-lg">
+            <p class="text-sm text-yellow-800 dark:text-yellow-300">
+              <i class="fas fa-exclamation-triangle mr-1"></i>
+              <strong data-i18n="docs.plugin.warning">注意:</strong> <span data-i18n="docs.plugin.warningText">修改代码后执行
+                docker compose restart nonebot 生效</span>
+            </p>
+          </div>
         </div>
 
         <div class="bg-white dark:bg-gray-800 rounded-2xl p-8 border border-gray-200 dark:border-gray-700">
           <h3 class="text-xl font-bold mb-6 flex items-center gap-3">
             <i class="fas fa-database text-primary-500"></i>
-            <span data-i18n="docs.api.title">API 参考</span>
+            <span data-i18n="docs.api.title">技术栈</span>
           </h3>
-          <div class="space-y-4">
-            <div class="bg-gray-50 dark:bg-gray-900 rounded-lg p-4">
-              <div class="flex items-center justify-between mb-2">
-                <code class="text-sm font-mono text-primary-600 dark:text-primary-400">GET /search?keywords=xxx</code>
-                <span
-                  class="text-xs bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 px-2 py-0.5 rounded">musicapi</span>
-              </div>
-              <p class="text-sm text-gray-500" data-i18n="docs.api.search">网易云音乐搜索</p>
+          <div class="space-y-3">
+            <div class="flex items-center gap-3 p-3 bg-gray-50 dark:bg-gray-900 rounded-lg">
+              <i class="fab fa-docker text-blue-500"></i>
+              <span class="font-medium">Docker Compose</span>
+              <span class="text-gray-500 text-sm">服务编排</span>
             </div>
-            <div class="bg-gray-50 dark:bg-gray-900 rounded-lg p-4">
-              <div class="flex items-center justify-between mb-2">
-                <code class="text-sm font-mono text-primary-600 dark:text-primary-400">WS /onebot/v11/ws</code>
-                <span
-                  class="text-xs bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 px-2 py-0.5 rounded">nonebot</span>
-              </div>
-              <p class="text-sm text-gray-500" data-i18n="docs.api.ws">OneBot v11 反向 WebSocket</p>
+            <div class="flex items-center gap-3 p-3 bg-gray-50 dark:bg-gray-900 rounded-lg">
+              <i class="fab fa-python text-yellow-500"></i>
+              <span class="font-medium">NoneBot2</span>
+              <span class="text-gray-500 text-sm">Python 机器人框架</span>
+            </div>
+            <div class="flex items-center gap-3 p-3 bg-gray-50 dark:bg-gray-900 rounded-lg">
+              <i class="fas fa-plug text-green-500"></i>
+              <span class="font-medium">nonebot-adapter-onebot</span>
+              <span class="text-gray-500 text-sm">OneBot v11 协议适配</span>
+            </div>
+            <div class="flex items-center gap-3 p-3 bg-gray-50 dark:bg-gray-900 rounded-lg">
+              <i class="fas fa-bolt text-purple-500"></i>
+              <span class="font-medium">httpx</span>
+              <span class="text-gray-500 text-sm">异步 HTTP 客户端</span>
+            </div>
+            <div class="flex items-center gap-3 p-3 bg-gray-50 dark:bg-gray-900 rounded-lg">
+              <i class="fas fa-database text-orange-500"></i>
+              <span class="font-medium">aiosqlite</span>
+              <span class="text-gray-500 text-sm">异步 SQLite</span>
             </div>
           </div>
         </div>
@@ -709,6 +785,9 @@ echo "NETEASE_COOKIE=你的cookie" > .env</code>
               <i class="fas fa-star"></i>
               <span data-i18n="docs.contribute.star">给项目点个 Star</span>
             </a>
+          </div>
+          <div class="mt-6 pt-6 border-t border-gray-200 dark:border-gray-700">
+            <p class="text-sm text-gray-500">MIT License</p>
           </div>
         </div>
       </div>
@@ -784,6 +863,18 @@ echo "NETEASE_COOKIE=你的cookie" > .env</code>
             注册命令处理器。NoneBot 会自动加载，无需修改 bot.py。改代码后执行 docker compose restart nonebot 即可生效。
           </div>
         </div>
+
+        <div
+          class="faq-item bg-gray-50 dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-700 overflow-hidden">
+          <button class="faq-btn w-full px-6 py-4 text-left flex items-center justify-between gap-4"
+            onclick="toggleFaq(this)">
+            <span class="font-semibold" data-i18n="faq.q6.title">Windows Docker 端口被占用？</span>
+            <i class="fas fa-chevron-down transition-transform"></i>
+          </button>
+          <div class="faq-content hidden px-6 pb-4 text-gray-600 dark:text-gray-400" data-i18n="faq.q6.answer">
+            3000、8081 等低位端口可能被系统占用。修改 docker-compose.yml 中的端口映射，使用高位端口（如 13000:3000）来解决此问题。
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -834,6 +925,8 @@ echo "NETEASE_COOKIE=你的cookie" > .env</code>
           <p class="text-sm max-w-md" data-i18n="footer.description">
             基于 NoneBot2 + OneBot v11 的 QQ 群聊机器人，开源免费，功能丰富。
           </p>
+          <p class="text-sm mt-2">官网: <a href="https://codehyq.github.io/qq-bot-page" target="_blank"
+              class="text-primary-400 hover:underline">codehyq.github.io/qq-bot-page</a></p>
         </div>
         <div>
           <h4 class="font-semibold text-white mb-4" data-i18n="footer.links">链接</h4>
@@ -882,7 +975,7 @@ echo "NETEASE_COOKIE=你的cookie" > .env</code>
         'lang.zh': '中文',
         'lang.en': 'English',
         'hero.title': 'QQ 群聊小助手',
-        'hero.subtitle': '基于 NoneBot2 + OneBot v11 的智能机器人，支持音乐点歌、成语接龙、天气查询等多种功能',
+        'hero.subtitle': '基于 NoneBot2 + OneBot v11 的 QQ 群聊机器人，支持网易云/QQ 音乐点歌、歌词查询、猜歌游戏、成语接龙、天气查询等多种功能。',
         'hero.getStarted': '快速开始',
         'hero.viewSource': '查看源码',
         'hero.techStack': 'Docker · Python · FastAPI',
@@ -901,36 +994,50 @@ echo "NETEASE_COOKIE=你的cookie" > .env</code>
         'features.plugin.title': '插件扩展',
         'features.plugin.desc': '模块化插件架构，轻松扩展新功能，无需修改核心代码',
         'commands.title': '命令一览',
-        'commands.subtitle': '所有命令需要 @机器人 才能触发',
+        'commands.subtitle': '所有命令需要 @机器人 才能触发，避免群聊刷屏',
         'commands.music.title': '音乐',
-        'commands.music.search': '网易云搜索',
-        'commands.music.qq': 'QQ音乐搜索',
-        'commands.music.lyric': '查看歌词',
-        'commands.music.guess': '猜歌游戏',
-        'commands.music.rank': '点歌排行',
+        'commands.music.search': '网易云搜索，选序号发卡片',
+        'commands.music.qq': 'QQ音乐搜索，选序号发链接',
+        'commands.music.lyric': '查看上一首歌的歌词',
+        'commands.music.daily': '随机推荐热门歌曲',
+        'commands.music.guess': '根据歌词猜歌名，60秒限时',
+        'commands.music.rank': '本群点歌次数排行',
+        'commands.music.record': '你的点歌足迹',
         'commands.game.title': '互动',
-        'commands.game.idiom': '成语接龙',
-        'commands.game.fortune': '今日运势',
-        'commands.game.choose': '帮你选择',
+        'commands.game.idiom': '开始成语接龙游戏',
+        'commands.game.fortune': '今日运势，每天限一次',
+        'commands.game.choose': '随机帮你做选择',
         'commands.game.quote': '随机语录',
-        'commands.game.image': '动漫图片',
+        'commands.game.image': '随机动漫图片',
+        'commands.game.illust': '偏插画风格的动漫图',
         'commands.tool.title': '工具',
-        'commands.tool.weather': '天气查询',
-        'commands.tool.english': '每日英语',
-        'commands.tool.japanese': '每日日语',
-        'commands.tool.help': '功能菜单',
+        'commands.tool.weather': '查询城市天气（默认北京）',
+        'commands.tool.english': '一句英文 + 中文翻译',
+        'commands.tool.japanese': '一句日文 + 中文翻译',
+        'commands.tool.help': '显示完整功能菜单',
         'install.title': '安装指南',
         'install.subtitle': '快速部署到你的服务器或本地环境',
         'install.step1.title': '克隆项目',
-        'install.step1.desc': '从 GitHub 克隆最新代码',
+        'install.step1.desc': '从 GitHub 克隆最新代码到本地',
         'install.step2.title': '配置环境',
-        'install.step2.desc': '配置网易云 Cookie（可选但推荐）',
+        'install.step2.desc': '配置网易云 Cookie（可选，但推荐配置以提升搜索准确度）',
+        'install.step2.note': '从浏览器登录 music.163.com 提取 Cookie',
         'install.step3.title': '启动服务',
         'install.step3.desc': '使用 Docker Compose 启动所有服务',
-        'install.step4.title': '配置 LLBot',
-        'install.step4.desc': '配置反向 WebSocket 连接',
+        'install.step4.title': '配置 LLBot Desktop',
+        'install.step4.desc': '下载并配置 QQ 机器人客户端',
+        'install.step4.step1': '下载 LLBot Desktop，解压到固定目录',
+        'install.step4.step2': '运行 llbot.exe，点击"启动"后用 QQ 小号扫码登录',
+        'install.step4.step3': '打开 http://localhost:3080，配置反向 WebSocket',
+        'install.step4.wsAddr': 'WebSocket 地址:',
+        'install.step4.token': '(留空)',
+        'install.step5.title': '测试',
+        'install.step5.desc': '在群里发送 @机器人 帮助 查看所有功能',
         'install.requirements.title': '环境要求',
         'install.containers.title': '启动的容器',
+        'install.commands.title': '常用命令',
+        'install.commands.logs': '查看 NoneBot 日志',
+        'install.commands.rebuild': '重新构建并启动',
         'docs.title': '使用文档',
         'docs.subtitle': '了解更多技术细节和开发指南',
         'docs.architecture.title': '架构设计',
@@ -939,9 +1046,9 @@ echo "NETEASE_COOKIE=你的cookie" > .env</code>
         'docs.architecture.point3': '反向 WebSocket 连接，无需暴露公网端口',
         'docs.plugin.title': '插件开发',
         'docs.plugin.desc': '添加新功能只需简单几步',
-        'docs.api.title': 'API 参考',
-        'docs.api.search': '网易云音乐搜索',
-        'docs.api.ws': 'OneBot v11 反向 WebSocket',
+        'docs.plugin.warning': '注意:',
+        'docs.plugin.warningText': '修改代码后执行 docker compose restart nonebot 生效',
+        'docs.api.title': '技术栈',
         'docs.contribute.title': '贡献指南',
         'docs.contribute.desc': '欢迎提交 Issue 和 Pull Request',
         'docs.contribute.issues': '提交 Bug 或功能建议',
@@ -959,6 +1066,8 @@ echo "NETEASE_COOKIE=你的cookie" > .env</code>
         'faq.q4.answer': '这是正常现象。LLBot 接管了 QQ 连接后，官方 QQ 客户端会被挤下线。使用小号进行测试可以避免影响主要账号。',
         'faq.q5.title': '如何添加新插件？',
         'faq.q5.answer': '在 bot/plugins/ 目录下创建新的 .py 文件，导入 help_registry 并调用 register() 注册帮助信息，使用 on_command() 或 on_message() 注册命令处理器。NoneBot 会自动加载，无需修改 bot.py。改代码后执行 docker compose restart nonebot 即可生效。',
+        'faq.q6.title': 'Windows Docker 端口被占用？',
+        'faq.q6.answer': '3000、8081 等低位端口可能被系统占用。修改 docker-compose.yml 中的端口映射，使用高位端口（如 13000:3000）来解决此问题。',
         'contact.title': '联系我们',
         'contact.subtitle': '有问题或建议？联系我们吧！',
         'contact.issues': 'Issue Tracker',
@@ -981,7 +1090,7 @@ echo "NETEASE_COOKIE=你的cookie" > .env</code>
         'lang.zh': '中文',
         'lang.en': 'English',
         'hero.title': 'QQ Group Bot Assistant',
-        'hero.subtitle': 'An intelligent bot based on NoneBot2 + OneBot v11, supporting music ordering, idiom games, weather查询 and more',
+        'hero.subtitle': 'QQ group chat bot based on NoneBot2 + OneBot v11, supporting music ordering, lyric lookup, guess-the-song games, idiom chains, weather queries and more.',
         'hero.getStarted': 'Get Started',
         'hero.viewSource': 'View Source',
         'hero.techStack': 'Docker · Python · FastAPI',
@@ -990,7 +1099,7 @@ echo "NETEASE_COOKIE=你的cookie" > .env</code>
         'features.music.title': 'Music Ordering',
         'features.music.desc': 'Search from NetEase Cloud Music and QQ Music, send music cards, click to play',
         'features.game.title': 'Interactive Games',
-        'features.game.desc': 'Idiom chain, guess the song, fortune telling and more interactive games',
+        'features.game.desc': 'Idiom chain, guess-the-song, fortune telling and more interactive games',
         'features.image.title': 'Image Sharing',
         'features.image.desc': 'Random anime images and illustrations, share to group with one click',
         'features.weather.title': 'Weather Query',
@@ -1000,36 +1109,50 @@ echo "NETEASE_COOKIE=你的cookie" > .env</code>
         'features.plugin.title': 'Plugin Extension',
         'features.plugin.desc': 'Modular plugin architecture, easily extend new features without modifying core code',
         'commands.title': 'Commands',
-        'commands.subtitle': 'All commands need @bot to trigger',
+        'commands.subtitle': 'All commands need @bot to trigger, avoiding group chat spam',
         'commands.music.title': 'Music',
-        'commands.music.search': 'NetEase Search',
-        'commands.music.qq': 'QQ Music Search',
-        'commands.music.lyric': 'View Lyrics',
-        'commands.music.guess': 'Guess Song',
-        'commands.music.rank': 'Ranking',
+        'commands.music.search': 'NetEase search, select number to send card',
+        'commands.music.qq': 'QQ Music search, select number to send link',
+        'commands.music.lyric': 'View last song lyrics',
+        'commands.music.daily': 'Random popular song recommendation',
+        'commands.music.guess': 'Guess song from lyrics, 60 second limit',
+        'commands.music.rank': 'Group song ordering ranking',
+        'commands.music.record': 'Your song ordering history',
         'commands.game.title': 'Interactive',
-        'commands.game.idiom': 'Idiom Chain',
-        'commands.game.fortune': 'Fortune',
-        'commands.game.choose': 'Choice Helper',
-        'commands.game.quote': 'Random Quote',
-        'commands.game.image': 'Anime Images',
+        'commands.game.idiom': 'Start idiom chain game',
+        'commands.game.fortune': 'Daily fortune, once per day',
+        'commands.game.choose': 'Random choice helper',
+        'commands.game.quote': 'Random quote',
+        'commands.game.image': 'Random anime images',
+        'commands.game.illust': 'Illustration-style anime art',
         'commands.tool.title': 'Tools',
-        'commands.tool.weather': 'Weather',
-        'commands.tool.english': 'Daily English',
-        'commands.tool.japanese': 'Daily Japanese',
-        'commands.tool.help': 'Help Menu',
+        'commands.tool.weather': 'City weather (default: Beijing)',
+        'commands.tool.english': 'English sentence + Chinese translation',
+        'commands.tool.japanese': 'Japanese sentence + Chinese translation',
+        'commands.tool.help': 'Show full feature menu',
         'install.title': 'Installation Guide',
         'install.subtitle': 'Deploy quickly to your server or local environment',
         'install.step1.title': 'Clone Project',
-        'install.step1.desc': 'Clone the latest code from GitHub',
+        'install.step1.desc': 'Clone the latest code from GitHub to local',
         'install.step2.title': 'Configure Environment',
-        'install.step2.desc': 'Configure NetEase Cookie (optional but recommended)',
+        'install.step2.desc': 'Configure NetEase Cookie (optional, but recommended for better search accuracy)',
+        'install.step2.note': 'Extract Cookie from browser after logging into music.163.com',
         'install.step3.title': 'Start Services',
         'install.step3.desc': 'Use Docker Compose to start all services',
-        'install.step4.title': 'Configure LLBot',
-        'install.step4.desc': 'Configure reverse WebSocket connection',
+        'install.step4.title': 'Configure LLBot Desktop',
+        'install.step4.desc': 'Download and configure QQ bot client',
+        'install.step4.step1': 'Download LLBot Desktop, extract to a fixed directory',
+        'install.step4.step2': 'Run llbot.exe, click "Start" and scan QR with QQ small account',
+        'install.step4.step3': 'Open http://localhost:3080, configure reverse WebSocket',
+        'install.step4.wsAddr': 'WebSocket Address:',
+        'install.step4.token': '(Leave empty)',
+        'install.step5.title': 'Test',
+        'install.step5.desc': 'Send @bot help in group to view all features',
         'install.requirements.title': 'Requirements',
         'install.containers.title': 'Running Containers',
+        'install.commands.title': 'Common Commands',
+        'install.commands.logs': 'View NoneBot logs',
+        'install.commands.rebuild': 'Rebuild and start',
         'docs.title': 'Documentation',
         'docs.subtitle': 'Learn more technical details and development guide',
         'docs.architecture.title': 'Architecture',
@@ -1038,9 +1161,9 @@ echo "NETEASE_COOKIE=你的cookie" > .env</code>
         'docs.architecture.point3': 'Reverse WebSocket connection, no public port exposure needed',
         'docs.plugin.title': 'Plugin Development',
         'docs.plugin.desc': 'Adding new features is just a few simple steps',
-        'docs.api.title': 'API Reference',
-        'docs.api.search': 'NetEase Music Search',
-        'docs.api.ws': 'OneBot v11 Reverse WebSocket',
+        'docs.plugin.warning': 'Note:',
+        'docs.plugin.warningText': 'Run docker compose restart nonebot after code changes',
+        'docs.api.title': 'Tech Stack',
         'docs.contribute.title': 'Contributing',
         'docs.contribute.desc': 'Welcome to submit Issues and Pull Requests',
         'docs.contribute.issues': 'Submit Bug or Feature Request',
@@ -1048,9 +1171,9 @@ echo "NETEASE_COOKIE=你的cookie" > .env</code>
         'docs.contribute.star': 'Give the project a Star',
         'faq.title': 'FAQ',
         'faq.subtitle': 'Solve common problems you may encounter',
-        'faq.q1.title': 'What to do if WebSocket cannot connect?',
+        'faq.q1.title': 'What if WebSocket cannot connect?',
         'faq.q1.answer': 'Confirm Docker backend is running, check docker ps for qq-bot-nonebot-1 status. Verify LLBot reverse WebSocket config, address should be ws://localhost:8080/onebot/v11/ws.',
-        'faq.q2.title': 'Music card cannot be clicked to play?',
+        'faq.q2.title': 'Music card cannot be clicked?',
         'faq.q2.answer': 'This is a limitation of QQ NT desktop client. NetEase music cards show "unsupported message type" on desktop. Try using mobile QQ, music cards work fine there.',
         'faq.q3.title': 'Search results not accurate?',
         'faq.q3.answer': 'NetEase music search depends on Cookie. Extract Cookie from browser after logging into music.163.com, write to bot/.env NETEASE_COOKIE. Re-extract when Cookie expires.',
@@ -1058,6 +1181,8 @@ echo "NETEASE_COOKIE=你的cookie" > .env</code>
         'faq.q4.answer': 'This is normal. LLBot takes over the QQ connection, official QQ client will be disconnected. Using a small account for testing avoids affecting main account.',
         'faq.q5.title': 'How to add new plugins?',
         'faq.q5.answer': 'Create new .py file in bot/plugins/, import help_registry and call register(), use on_command() or on_message() to register handlers. NoneBot auto-loads, no need to modify bot.py. Run docker compose restart nonebot after changes.',
+        'faq.q6.title': 'Windows Docker port conflicts?',
+        'faq.q6.answer': 'Low ports like 3000, 8081 may be occupied by system. Modify port mapping in docker-compose.yml, use high ports (e.g., 13000:3000) to solve this.',
         'contact.title': 'Contact Us',
         'contact.subtitle': 'Have questions or suggestions? Contact us!',
         'contact.issues': 'Issue Tracker',
@@ -1079,14 +1204,12 @@ echo "NETEASE_COOKIE=你的cookie" > .env</code>
       localStorage.setItem('lang', lang);
       document.getElementById('currentLang').textContent = lang === 'zh' ? '中文' : 'EN';
       document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
-
       document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
         if (translations[lang] && translations[lang][key]) {
           el.textContent = translations[lang][key];
         }
       });
-
       document.getElementById('langDropdown').classList.remove('active');
     }
 
@@ -1142,11 +1265,7 @@ echo "NETEASE_COOKIE=你的cookie" > .env</code>
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    };
-
+    const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
