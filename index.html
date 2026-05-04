@@ -374,105 +374,77 @@
         <p class="text-lg text-gray-600 dark:text-gray-400" data-i18n="commands.subtitle">所有命令需要 @机器人 才能触发，避免群聊刷屏</p>
       </div>
 
-      <div class="grid lg:grid-cols-3 gap-8">
+      <div class="grid lg:grid-cols-3 gap-6">
         <div class="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden border border-gray-200 dark:border-gray-700">
-          <div class="flex items-center gap-3 p-6 border-b border-gray-200 dark:border-gray-700">
-            <div class="w-10 h-10 rounded-lg bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center">
-              <i class="fas fa-music text-primary-600 dark:text-primary-400"></i>
+          <div
+            class="flex items-center gap-3 p-4 border-b border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900/50">
+            <div class="w-8 h-8 rounded-lg bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center">
+              <i class="fas fa-music text-primary-600 dark:text-primary-400 text-sm"></i>
             </div>
-            <h3 class="text-lg font-bold" data-i18n="commands.music.title">音乐</h3>
+            <h3 class="text-base font-bold" data-i18n="commands.music.title">音乐</h3>
           </div>
-          <div class="p-6 space-y-4">
-            <div class="flex justify-between items-center">
-              <code class="text-sm bg-gray-100 dark:bg-gray-700 px-3 py-1.5 rounded">@我 点歌 <歌名></code>
-              <span class="text-sm text-gray-500" data-i18n="commands.music.search">网易云搜索，选序号发卡片</span>
-            </div>
-            <div class="flex justify-between items-center">
-              <code class="text-sm bg-gray-100 dark:bg-gray-700 px-3 py-1.5 rounded">@我 QQ点歌 <歌名></code>
-              <span class="text-sm text-gray-500" data-i18n="commands.music.qq">QQ音乐搜索，选序号发链接</span>
-            </div>
-            <div class="flex justify-between items-center">
-              <code class="text-sm bg-gray-100 dark:bg-gray-700 px-3 py-1.5 rounded">@我 歌词</code>
-              <span class="text-sm text-gray-500" data-i18n="commands.music.lyric">查看上一首歌的歌词</span>
-            </div>
-            <div class="flex justify-between items-center">
-              <code class="text-sm bg-gray-100 dark:bg-gray-700 px-3 py-1.5 rounded">@我 每日一歌</code>
-              <span class="text-sm text-gray-500" data-i18n="commands.music.daily">随机推荐热门歌曲</span>
-            </div>
-            <div class="flex justify-between items-center">
-              <code class="text-sm bg-gray-100 dark:bg-gray-700 px-3 py-1.5 rounded">@我 猜歌</code>
-              <span class="text-sm text-gray-500" data-i18n="commands.music.guess">根据歌词猜歌名，60秒限时</span>
-            </div>
-            <div class="flex justify-between items-center">
-              <code class="text-sm bg-gray-100 dark:bg-gray-700 px-3 py-1.5 rounded">@我 点歌排行</code>
-              <span class="text-sm text-gray-500" data-i18n="commands.music.rank">本群点歌次数排行</span>
-            </div>
-            <div class="flex justify-between items-center">
-              <code class="text-sm bg-gray-100 dark:bg-gray-700 px-3 py-1.5 rounded">@我 点歌记录</code>
-              <span class="text-sm text-gray-500" data-i18n="commands.music.record">你的点歌足迹</span>
-            </div>
+          <div class="p-4 space-y-2">
+            <div class="text-sm"><code
+                class="bg-gray-100 dark:bg-gray-700 px-2 py-0.5 rounded">@我 点歌 &lt;歌名&gt;</code><span
+                class="text-gray-500 ml-2" data-i18n="commands.music.search">网易云搜索，选序号发卡片</span></div>
+            <div class="text-sm"><code
+                class="bg-gray-100 dark:bg-gray-700 px-2 py-0.5 rounded">@我 QQ点歌 &lt;歌名&gt;</code><span
+                class="text-gray-500 ml-2" data-i18n="commands.music.qq">QQ音乐搜索</span></div>
+            <div class="text-sm"><code class="bg-gray-100 dark:bg-gray-700 px-2 py-0.5 rounded">@我 歌词</code><span
+                class="text-gray-500 ml-2" data-i18n="commands.music.lyric">上一首歌歌词</span></div>
+            <div class="text-sm"><code class="bg-gray-100 dark:bg-gray-700 px-2 py-0.5 rounded">@我 每日一歌</code><span
+                class="text-gray-500 ml-2" data-i18n="commands.music.daily">随机推荐</span></div>
+            <div class="text-sm"><code class="bg-gray-100 dark:bg-gray-700 px-2 py-0.5 rounded">@我 猜歌</code><span
+                class="text-gray-500 ml-2" data-i18n="commands.music.guess">猜歌游戏</span></div>
+            <div class="text-sm"><code class="bg-gray-100 dark:bg-gray-700 px-2 py-0.5 rounded">@我 点歌排行</code><span
+                class="text-gray-500 ml-2" data-i18n="commands.music.rank">点歌排行</span></div>
+            <div class="text-sm"><code class="bg-gray-100 dark:bg-gray-700 px-2 py-0.5 rounded">@我 点歌记录</code><span
+                class="text-gray-500 ml-2" data-i18n="commands.music.record">点歌足迹</span></div>
           </div>
         </div>
 
         <div class="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden border border-gray-200 dark:border-gray-700">
-          <div class="flex items-center gap-3 p-6 border-b border-gray-200 dark:border-gray-700">
-            <div class="w-10 h-10 rounded-lg bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center">
-              <i class="fas fa-gamepad text-purple-600 dark:text-purple-400"></i>
+          <div
+            class="flex items-center gap-3 p-4 border-b border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900/50">
+            <div class="w-8 h-8 rounded-lg bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center">
+              <i class="fas fa-gamepad text-purple-600 dark:text-purple-400 text-sm"></i>
             </div>
-            <h3 class="text-lg font-bold" data-i18n="commands.game.title">互动</h3>
+            <h3 class="text-base font-bold" data-i18n="commands.game.title">互动</h3>
           </div>
-          <div class="p-6 space-y-4">
-            <div class="flex justify-between items-center">
-              <code class="text-sm bg-gray-100 dark:bg-gray-700 px-3 py-1.5 rounded">@我 成语接龙</code>
-              <span class="text-sm text-gray-500" data-i18n="commands.game.idiom">开始成语接龙游戏</span>
-            </div>
-            <div class="flex justify-between items-center">
-              <code class="text-sm bg-gray-100 dark:bg-gray-700 px-3 py-1.5 rounded">@我 抽签</code>
-              <span class="text-sm text-gray-500" data-i18n="commands.game.fortune">今日运势，每天限一次</span>
-            </div>
-            <div class="flex justify-between items-center">
-              <code class="text-sm bg-gray-100 dark:bg-gray-700 px-3 py-1.5 rounded">@我 选择 <A> <B> <C></code>
-              <span class="text-sm text-gray-500" data-i18n="commands.game.choose">随机帮你做选择</span>
-            </div>
-            <div class="flex justify-between items-center">
-              <code class="text-sm bg-gray-100 dark:bg-gray-700 px-3 py-1.5 rounded">@我 一言</code>
-              <span class="text-sm text-gray-500" data-i18n="commands.game.quote">随机语录</span>
-            </div>
-            <div class="flex justify-between items-center">
-              <code class="text-sm bg-gray-100 dark:bg-gray-700 px-3 py-1.5 rounded">@我 美图</code>
-              <span class="text-sm text-gray-500" data-i18n="commands.game.image">随机动漫图片</span>
-            </div>
-            <div class="flex justify-between items-center">
-              <code class="text-sm bg-gray-100 dark:bg-gray-700 px-3 py-1.5 rounded">@我 插画</code>
-              <span class="text-sm text-gray-500" data-i18n="commands.game.illust">偏插画风格的动漫图</span>
-            </div>
+          <div class="p-4 space-y-2">
+            <div class="text-sm"><code class="bg-gray-100 dark:bg-gray-700 px-2 py-0.5 rounded">@我 成语接龙</code><span
+                class="text-gray-500 ml-2" data-i18n="commands.game.idiom">接龙游戏</span></div>
+            <div class="text-sm"><code class="bg-gray-100 dark:bg-gray-700 px-2 py-0.5 rounded">@我 抽签</code><span
+                class="text-gray-500 ml-2" data-i18n="commands.game.fortune">今日运势</span></div>
+            <div class="text-sm"><code class="bg-gray-100 dark:bg-gray-700 px-2 py-0.5 rounded">@我 选择 A B C</code><span
+                class="text-gray-500 ml-2" data-i18n="commands.game.choose">帮你选择</span></div>
+            <div class="text-sm"><code class="bg-gray-100 dark:bg-gray-700 px-2 py-0.5 rounded">@我 一言</code><span
+                class="text-gray-500 ml-2" data-i18n="commands.game.quote">随机语录</span></div>
+            <div class="text-sm"><code class="bg-gray-100 dark:bg-gray-700 px-2 py-0.5 rounded">@我 美图</code><span
+                class="text-gray-500 ml-2" data-i18n="commands.game.image">动漫图片</span></div>
+            <div class="text-sm"><code class="bg-gray-100 dark:bg-gray-700 px-2 py-0.5 rounded">@我 插画</code><span
+                class="text-gray-500 ml-2" data-i18n="commands.game.illust">插画风格</span></div>
           </div>
         </div>
 
         <div class="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden border border-gray-200 dark:border-gray-700">
-          <div class="flex items-center gap-3 p-6 border-b border-gray-200 dark:border-gray-700">
-            <div class="w-10 h-10 rounded-lg bg-green-100 dark:bg-green-900/30 flex items-center justify-center">
-              <i class="fas fa-tools text-green-600 dark:text-green-400"></i>
+          <div
+            class="flex items-center gap-3 p-4 border-b border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900/50">
+            <div class="w-8 h-8 rounded-lg bg-green-100 dark:bg-green-900/30 flex items-center justify-center">
+              <i class="fas fa-tools text-green-600 dark:text-green-400 text-sm"></i>
             </div>
-            <h3 class="text-lg font-bold" data-i18n="commands.tool.title">工具</h3>
+            <h3 class="text-base font-bold" data-i18n="commands.tool.title">工具</h3>
           </div>
-          <div class="p-6 space-y-4">
-            <div class="flex justify-between items-center">
-              <code class="text-sm bg-gray-100 dark:bg-gray-700 px-3 py-1.5 rounded">@我 天气 <城市></code>
-              <span class="text-sm text-gray-500" data-i18n="commands.tool.weather">查询城市天气（默认北京）</span>
-            </div>
-            <div class="flex justify-between items-center">
-              <code class="text-sm bg-gray-100 dark:bg-gray-700 px-3 py-1.5 rounded">@我 每日英语</code>
-              <span class="text-sm text-gray-500" data-i18n="commands.tool.english">一句英文 + 中文翻译</span>
-            </div>
-            <div class="flex justify-between items-center">
-              <code class="text-sm bg-gray-100 dark:bg-gray-700 px-3 py-1.5 rounded">@我 每日日语</code>
-              <span class="text-sm text-gray-500" data-i18n="commands.tool.japanese">一句日文 + 中文翻译</span>
-            </div>
-            <div class="flex justify-between items-center">
-              <code class="text-sm bg-gray-100 dark:bg-gray-700 px-3 py-1.5 rounded">@我 帮助</code>
-              <span class="text-sm text-gray-500" data-i18n="commands.tool.help">显示完整功能菜单</span>
-            </div>
+          <div class="p-4 space-y-2">
+            <div class="text-sm"><code
+                class="bg-gray-100 dark:bg-gray-700 px-2 py-0.5 rounded">@我 天气 &lt;城市&gt;</code><span
+                class="text-gray-500 ml-2" data-i18n="commands.tool.weather">天气查询</span></div>
+            <div class="text-sm"><code class="bg-gray-100 dark:bg-gray-700 px-2 py-0.5 rounded">@我 每日英语</code><span
+                class="text-gray-500 ml-2" data-i18n="commands.tool.english">英语学习</span></div>
+            <div class="text-sm"><code class="bg-gray-100 dark:bg-gray-700 px-2 py-0.5 rounded">@我 每日日语</code><span
+                class="text-gray-500 ml-2" data-i18n="commands.tool.japanese">日语学习</span></div>
+            <div class="text-sm"><code class="bg-gray-100 dark:bg-gray-700 px-2 py-0.5 rounded">@我 帮助</code><span
+                class="text-gray-500 ml-2" data-i18n="commands.tool.help">功能菜单</span></div>
           </div>
         </div>
       </div>
@@ -486,149 +458,153 @@
         <p class="text-lg text-gray-600 dark:text-gray-400" data-i18n="install.subtitle">快速部署到你的服务器或本地环境</p>
       </div>
 
-      <div class="grid lg:grid-cols-2 gap-12 items-start">
-        <div class="space-y-8">
-          <div class="flex gap-4">
-            <div
-              class="flex-shrink-0 w-10 h-10 rounded-full gradient-bg flex items-center justify-center text-white font-bold">
-              1</div>
-            <div>
-              <h3 class="text-xl font-bold mb-2" data-i18n="install.step1.title">克隆项目</h3>
-              <p class="text-gray-600 dark:text-gray-400 mb-3" data-i18n="install.step1.desc">从 GitHub 克隆最新代码到本地</p>
-              <div class="code-block p-4">
-                <code class="text-sm text-gray-300">git clone https://github.com/codehyq/qq-bot.git<br>cd qq-bot</code>
+      <div class="max-w-4xl mx-auto">
+        <div class="space-y-6">
+          <div class="bg-gray-50 dark:bg-gray-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
+            <div class="flex items-start gap-4">
+              <div
+                class="flex-shrink-0 w-8 h-8 rounded-full gradient-bg flex items-center justify-center text-white font-bold text-sm">
+                1</div>
+              <div class="flex-1">
+                <h3 class="text-lg font-bold mb-2" data-i18n="install.step1.title">克隆项目</h3>
+                <p class="text-gray-600 dark:text-gray-400 text-sm mb-3" data-i18n="install.step1.desc">从 GitHub
+                  克隆最新代码到本地</p>
+                <div class="code-block p-3"><code
+                    class="text-sm text-gray-300">git clone https://github.com/codehyq/qq-bot.git</code></div>
               </div>
             </div>
           </div>
 
-          <div class="flex gap-4">
-            <div
-              class="flex-shrink-0 w-10 h-10 rounded-full gradient-bg flex items-center justify-center text-white font-bold">
-              2</div>
-            <div>
-              <h3 class="text-xl font-bold mb-2" data-i18n="install.step2.title">配置环境</h3>
-              <p class="text-gray-600 dark:text-gray-400 mb-3" data-i18n="install.step2.desc">配置网易云
-                Cookie（可选，但推荐配置以提升搜索准确度）</p>
-              <div class="code-block p-4">
-                <code class="text-sm text-gray-300">cd bot<br>echo "NETEASE_COOKIE=你的cookie" >> .env</code>
-              </div>
-              <p class="text-sm text-gray-500 mt-2" data-i18n="install.step2.note">从浏览器登录 music.163.com 提取 Cookie</p>
-            </div>
-          </div>
-
-          <div class="flex gap-4">
-            <div
-              class="flex-shrink-0 w-10 h-10 rounded-full gradient-bg flex items-center justify-center text-white font-bold">
-              3</div>
-            <div>
-              <h3 class="text-xl font-bold mb-2" data-i18n="install.step3.title">启动服务</h3>
-              <p class="text-gray-600 dark:text-gray-400 mb-3" data-i18n="install.step3.desc">使用 Docker Compose 启动所有服务
-              </p>
-              <div class="code-block p-4">
-                <code class="text-sm text-gray-300">docker compose up -d</code>
+          <div class="bg-gray-50 dark:bg-gray-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
+            <div class="flex items-start gap-4">
+              <div
+                class="flex-shrink-0 w-8 h-8 rounded-full gradient-bg flex items-center justify-center text-white font-bold text-sm">
+                2</div>
+              <div class="flex-1">
+                <h3 class="text-lg font-bold mb-2" data-i18n="install.step2.title">配置环境</h3>
+                <p class="text-gray-600 dark:text-gray-400 text-sm mb-3" data-i18n="install.step2.desc">配置网易云
+                  Cookie（可选，推荐配置以提升搜索准确度）</p>
+                <div class="code-block p-3"><code class="text-sm text-gray-300">cd bot</code></div>
+                <div class="code-block p-3 mt-2"><code
+                    class="text-sm text-gray-300">echo "NETEASE_COOKIE=你的cookie" >> .env</code></div>
+                <p class="text-xs text-gray-500 mt-2" data-i18n="install.step2.note">从浏览器登录 music.163.com 提取 Cookie</p>
               </div>
             </div>
           </div>
 
-          <div class="flex gap-4">
-            <div
-              class="flex-shrink-0 w-10 h-10 rounded-full gradient-bg flex items-center justify-center text-white font-bold">
-              4</div>
-            <div>
-              <h3 class="text-xl font-bold mb-2" data-i18n="install.step4.title">配置 LLBot Desktop</h3>
-              <p class="text-gray-600 dark:text-gray-400 mb-3" data-i18n="install.step4.desc">下载并配置 QQ 机器人客户端</p>
-              <ol class="list-decimal list-inside space-y-2 text-sm text-gray-600 dark:text-gray-400 mb-4">
-                <li data-i18n="install.step4.step1">下载 <a href="https://github.com/LLOneBot/LuckyLilliaBot/releases"
-                    target="_blank" class="text-primary-600 hover:underline">LLBot Desktop</a>，解压到固定目录</li>
-                <li data-i18n="install.step4.step2">运行 llbot.exe，点击"启动"后用 QQ 小号扫码登录</li>
-                <li data-i18n="install.step4.step3">打开 http://localhost:3080，配置反向 WebSocket</li>
-              </ol>
-              <div class="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-4 text-sm">
-                <p class="text-blue-800 dark:text-blue-300"><strong data-i18n="install.step4.wsAddr">WebSocket
-                    地址:</strong> <code>ws://localhost:8080/onebot/v11/ws</code></p>
-                <p class="text-blue-800 dark:text-blue-300 mt-1"><strong>AccessToken:</strong> <span
-                    data-i18n="install.step4.token">(留空)</span></p>
+          <div class="bg-gray-50 dark:bg-gray-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
+            <div class="flex items-start gap-4">
+              <div
+                class="flex-shrink-0 w-8 h-8 rounded-full gradient-bg flex items-center justify-center text-white font-bold text-sm">
+                3</div>
+              <div class="flex-1">
+                <h3 class="text-lg font-bold mb-2" data-i18n="install.step3.title">启动服务</h3>
+                <p class="text-gray-600 dark:text-gray-400 text-sm mb-3" data-i18n="install.step3.desc">使用 Docker
+                  Compose 启动所有服务</p>
+                <div class="code-block p-3"><code class="text-sm text-gray-300">docker compose up -d</code></div>
               </div>
             </div>
           </div>
 
-          <div class="flex gap-4">
-            <div
-              class="flex-shrink-0 w-10 h-10 rounded-full gradient-bg flex items-center justify-center text-white font-bold">
-              5</div>
-            <div>
-              <h3 class="text-xl font-bold mb-2" data-i18n="install.step5.title">测试</h3>
-              <p class="text-gray-600 dark:text-gray-400" data-i18n="install.step5.desc">在群里发送 @机器人 帮助 查看所有功能</p>
+          <div class="bg-gray-50 dark:bg-gray-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
+            <div class="flex items-start gap-4">
+              <div
+                class="flex-shrink-0 w-8 h-8 rounded-full gradient-bg flex items-center justify-center text-white font-bold text-sm">
+                4</div>
+              <div class="flex-1">
+                <h3 class="text-lg font-bold mb-2" data-i18n="install.step4.title">配置 LLBot Desktop</h3>
+                <p class="text-gray-600 dark:text-gray-400 text-sm mb-3" data-i18n="install.step4.desc">下载并配置 QQ 机器人客户端
+                </p>
+                <ol class="list-decimal list-inside space-y-1 text-sm text-gray-600 dark:text-gray-400 mb-4 pl-2">
+                  <li data-i18n="install.step4.step1">下载 <a href="https://github.com/LLOneBot/LuckyLilliaBot/releases"
+                      target="_blank" class="text-primary-600 hover:underline">LLBot Desktop</a>，解压到固定目录</li>
+                  <li data-i18n="install.step4.step2">运行 llbot.exe，点击"启动"后用 QQ 小号扫码登录</li>
+                  <li data-i18n="install.step4.step3">打开 http://localhost:3080，配置反向 WebSocket</li>
+                </ol>
+                <div class="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-4 text-sm">
+                  <p class="text-blue-800 dark:text-blue-300"><strong data-i18n="install.step4.wsAddr">WebSocket
+                      地址:</strong> <code>ws://localhost:8080/onebot/v11/ws</code></p>
+                  <p class="text-blue-800 dark:text-blue-300 mt-1"><strong>AccessToken:</strong> <span
+                      data-i18n="install.step4.token">(留空)</span></p>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="lg:sticky lg:top-24">
-          <div class="bg-gray-50 dark:bg-gray-900 rounded-2xl p-8 border border-gray-200 dark:border-gray-700">
-            <h3 class="text-xl font-bold mb-6" data-i18n="install.requirements.title">环境要求</h3>
-            <div class="space-y-4">
-              <div class="flex items-start gap-4">
+          <div class="bg-gray-50 dark:bg-gray-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
+            <div class="flex items-start gap-4">
+              <div
+                class="flex-shrink-0 w-8 h-8 rounded-full gradient-bg flex items-center justify-center text-white font-bold text-sm">
+                5</div>
+              <div class="flex-1">
+                <h3 class="text-lg font-bold mb-2" data-i18n="install.step5.title">测试</h3>
+                <p class="text-gray-600 dark:text-gray-400 text-sm" data-i18n="install.step5.desc">在群里发送 @机器人 帮助 查看所有功能
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-gray-50 dark:bg-gray-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
+            <h3 class="text-lg font-bold mb-4" data-i18n="install.requirements.title">环境要求</h3>
+            <div class="grid sm:grid-cols-3 gap-4">
+              <div class="flex items-center gap-3">
                 <div
                   class="w-10 h-10 rounded-lg bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center flex-shrink-0">
                   <i class="fab fa-docker text-blue-600 dark:text-blue-400"></i>
                 </div>
                 <div>
-                  <h4 class="font-semibold">Docker Desktop</h4>
-                  <p class="text-sm text-gray-500">Windows 需开启 WSL2</p>
+                  <h4 class="font-semibold text-sm">Docker Desktop</h4>
+                  <p class="text-xs text-gray-500">Windows 需开启 WSL2</p>
                 </div>
               </div>
-              <div class="flex items-start gap-4">
+              <div class="flex items-center gap-3">
                 <div
                   class="w-10 h-10 rounded-lg bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center flex-shrink-0">
                   <i class="fab fa-windows text-purple-600 dark:text-purple-400"></i>
                 </div>
                 <div>
-                  <h4 class="font-semibold">LLBot Desktop</h4>
-                  <p class="text-sm text-gray-500">QQ NT 机器人客户端</p>
+                  <h4 class="font-semibold text-sm">LLBot Desktop</h4>
+                  <p class="text-xs text-gray-500">QQ NT 客户端</p>
                 </div>
               </div>
-              <div class="flex items-start gap-4">
+              <div class="flex items-center gap-3">
                 <div
                   class="w-10 h-10 rounded-lg bg-green-100 dark:bg-green-900/30 flex items-center justify-center flex-shrink-0">
                   <i class="fas fa-user text-green-600 dark:text-green-400"></i>
                 </div>
                 <div>
-                  <h4 class="font-semibold">QQ 小号</h4>
-                  <p class="text-sm text-gray-500">已加入目标群聊</p>
+                  <h4 class="font-semibold text-sm">QQ 小号</h4>
+                  <p class="text-xs text-gray-500">已加入目标群聊</p>
                 </div>
               </div>
             </div>
+          </div>
 
-            <div class="mt-8 pt-6 border-t border-gray-200 dark:border-gray-700">
-              <h4 class="font-semibold mb-4" data-i18n="install.containers.title">启动的容器</h4>
-              <div class="space-y-2 text-sm">
-                <div class="flex justify-between items-center">
-                  <span class="text-gray-600 dark:text-gray-400">musicapi</span>
-                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-0.5 rounded text-xs">:13000</code>
-                </div>
-                <div class="flex justify-between items-center">
-                  <span class="text-gray-600 dark:text-gray-400">qqmusicapi</span>
-                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-0.5 rounded text-xs">:13300</code>
-                </div>
-                <div class="flex justify-between items-center">
-                  <span class="text-gray-600 dark:text-gray-400">nonebot</span>
-                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-0.5 rounded text-xs">:8080</code>
-                </div>
+          <div class="bg-gray-50 dark:bg-gray-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
+            <h3 class="text-lg font-bold mb-4" data-i18n="install.containers.title">启动的容器</h3>
+            <div class="grid sm:grid-cols-3 gap-4 text-sm">
+              <div class="flex justify-between items-center">
+                <span class="text-gray-600 dark:text-gray-400">musicapi</span>
+                <code class="bg-gray-200 dark:bg-gray-700 px-2 py-0.5 rounded text-xs">:13000</code>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-gray-600 dark:text-gray-400">qqmusicapi</span>
+                <code class="bg-gray-200 dark:bg-gray-700 px-2 py-0.5 rounded text-xs">:13300</code>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-gray-600 dark:text-gray-400">nonebot</span>
+                <code class="bg-gray-200 dark:bg-gray-700 px-2 py-0.5 rounded text-xs">:8080</code>
               </div>
             </div>
+          </div>
 
-            <div class="mt-8 pt-6 border-t border-gray-200 dark:border-gray-700">
-              <h4 class="font-semibold mb-4" data-i18n="install.commands.title">常用命令</h4>
-              <div class="space-y-2 text-sm">
-                <div class="code-block p-3">
-                  <code class="text-gray-300 text-xs">docker compose logs -f nonebot</code>
-                </div>
-                <p class="text-gray-500 text-xs" data-i18n="install.commands.logs">查看 NoneBot 日志</p>
-                <div class="code-block p-3">
-                  <code class="text-gray-300 text-xs">docker compose up -d --build</code>
-                </div>
-                <p class="text-gray-500 text-xs" data-i18n="install.commands.rebuild">重新构建并启动</p>
-              </div>
+          <div class="bg-gray-50 dark:bg-gray-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
+            <h3 class="text-lg font-bold mb-4" data-i18n="install.commands.title">常用命令</h3>
+            <div class="space-y-3 text-sm">
+              <div class="code-block p-3"><code class="text-gray-300">docker compose logs -f nonebot</code></div>
+              <p class="text-gray-500 text-xs" data-i18n="install.commands.logs">查看 NoneBot 日志</p>
+              <div class="code-block p-3"><code class="text-gray-300">docker compose up -d --build</code></div>
+              <p class="text-gray-500 text-xs" data-i18n="install.commands.rebuild">重新构建并启动</p>
             </div>
           </div>
         </div>
