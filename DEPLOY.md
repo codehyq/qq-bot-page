@@ -2,15 +2,18 @@
 
 ## Overview
 
-This is a static website for the QQ Bot project. It's built with semantic HTML5, Tailwind CSS, and vanilla JavaScript. No build step is required.
+This is a static website for the QQ Bot project. It's built with semantic HTML5, prebuilt Tailwind CSS, and vanilla JavaScript.
 
 ## Project Structure
 
 ```
 qq-bot-page/
 ├── index.html          # Main website file
-├── DEPLOY.md          # This deployment guide
-└── references/        # Project reference documentation
+├── static/
+│   ├── styles.min.css  # Prebuilt Tailwind CSS
+│   └── logo.jpg        # Site logo
+├── DEPLOY.md           # This deployment guide
+└── tailwind.config.js  # Tailwind config (for rebuilding CSS)
 ```
 
 ## Deployment Options
@@ -21,7 +24,7 @@ qq-bot-page/
 2. Push this code to the repository:
    ```bash
    git init
-   git add index.html DEPLOY.md
+   git add index.html DEPLOY.md static/
    git commit -m "Initial commit"
    git branch -M main
    git remote add origin https://github.com/codehyq/qq-bot-page.git
@@ -59,7 +62,7 @@ Simply upload `index.html` to your web server's document root.
 - **Dark Mode**: Toggle between light and dark themes
 - **Multi-language**: Supports Chinese (zh-CN) and English (en)
 - **SEO Optimized**: Includes meta tags, Open Graph, and Twitter cards
-- **Fast Loading**: Uses CDN for Tailwind CSS and Font Awesome
+- **Fast Loading**: Prebuilt Tailwind CSS (~20KB), non-blocking Font Awesome, optimized font loading
 - **Interactive**: Smooth animations and FAQ accordions
 - **GitHub Integration**: Links to the main project repository
 
@@ -83,29 +86,23 @@ const translations = {
 
 ### Modifying Colors
 
-The site uses a gradient theme (purple-blue). Edit the Tailwind config:
+The site uses a gradient theme (purple-blue). Edit `tailwind.config.js` and rebuild:
 
-```javascript
-tailwind.config = {
-  theme: {
-    extend: {
-      colors: {
-        primary: {
-          // Your custom colors
-        }
-      }
-    }
-  }
-}
+```bash
+npx tailwindcss@3 build -i <(echo '@tailwind base; @tailwind components; @tailwind utilities;') -o static/styles.min.css --minify --content index.html
 ```
 
 ## Performance
 
-- Single HTML file with no external dependencies except CDN resources
-- Tailwind CSS loaded via CDN (can be self-hosted for production)
-- Font Awesome icons via CDN
-- Google Fonts (Inter) via CDN
-- Intersection Observer for scroll animations
+- Prebuilt Tailwind CSS (~20KB minified, replaces ~300KB+ runtime compiler)
+- Font Awesome loaded non-blocking via `media="print" onload` pattern
+- Google Fonts with reduced weights (400;600;700) and `display=swap`
+- Resource hints: `preconnect`, `preload` for critical assets
+- `requestAnimationFrame` throttled scroll handler with `passive: true`
+- IntersectionObserver with `unobserve` after animation triggers
+- DOM element caching to avoid repeated `getElementById` calls
+- Event delegation for FAQ accordion and mobile menu
+- Image `width`/`height` attributes to prevent layout shift
 - No JavaScript framework required
 
 ## Browser Support
@@ -117,9 +114,13 @@ tailwind.config = {
 
 ## Local Development
 
-Simply open `index.html` in a browser. No build step or local server required.
+### Rebuilding CSS (after modifying index.html)
 
-For a local server (optional):
+```bash
+npx tailwindcss@3 build -i <(echo '@tailwind base; @tailwind components; @tailwind utilities;') -o static/styles.min.css --minify --content index.html
+```
+
+### Preview
 ```bash
 # Using Python
 python -m http.server 8000
